@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  /* Tesla Design System Elements */
+  --color-primary: #3E6AE1;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #F4F4F4;
+  --color-accent: #3E6AE1;
+  
+  /* Tesla Color Palette */
+  --color-carbon: #171A20;
+  --color-graphite: #393C41;
+  --color-pewter: #5C5E62;
+  --color-silver: #8E8E8E;
+  
+  /* Constraints */
+  --radius-sm: 4px;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-graphite antialiased bg-white;
+    letter-spacing: normal;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-carbon font-medium tracking-normal;
+  }
+}
