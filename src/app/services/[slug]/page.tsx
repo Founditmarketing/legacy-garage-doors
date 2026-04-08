@@ -161,7 +161,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C1E] via-[#1C1C1E]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d14] via-[#0c0d14]/60 to-transparent" />
       </section>
 
       {/* Content */}
@@ -169,18 +169,18 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <div className="section-wrap">
           <Link
             href="/services"
-            className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-[#FF6B2C] transition-colors mb-8"
+            className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-[#3E6AE1] transition-colors mb-8"
           >
             <ArrowLeft size={14} /> All Services
           </Link>
 
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#FF6B2C] mb-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#3E6AE1] mb-4">
             Service Detail
           </p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3 max-w-2xl leading-[1.1]">
             {service.title}
           </h1>
-          <div className="w-16 h-1 rounded-full bg-gradient-to-r from-[#FF6B2C] to-[#FF8A50] mt-6" />
+          <div className="w-16 h-1 rounded-full bg-gradient-to-r from-[#3E6AE1] to-[#5A82F0] mt-6" />
         </div>
       </section>
 
@@ -207,7 +207,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       {/* Related */}
       <section className="py-14 border-t border-white/[0.04]">
         <div className="section-wrap">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#FF6B2C] mb-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#3E6AE1] mb-5">
             Related Services
           </p>
           <div className="flex flex-wrap gap-3">
@@ -215,7 +215,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <Link
                 key={rs}
                 href={`/services/${rs}`}
-                className="px-5 py-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-sm text-white/50 hover:text-white hover:bg-[#FF6B2C]/10 hover:border-[#FF6B2C]/20 transition-all"
+                className="px-5 py-3 rounded-xl bg-white/[0.03] border border-white/[0.06] text-sm text-white/50 hover:text-white hover:bg-[#3E6AE1]/10 hover:border-[#3E6AE1]/20 transition-all"
               >
                 {slugToTitle[rs] || rs}
               </Link>

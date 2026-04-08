@@ -11,7 +11,7 @@ export default function BookOnlinePage() {
     <div className="page-enter">
       <section className="pt-32 pb-16 text-center">
         <div className="section-wrap">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-4">Book Online</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-brand)] mb-4">Book Online</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Schedule Your Service.</h1>
           <p className="text-white/40 text-lg max-w-xl mx-auto font-light">
             Tell us what you need and we&apos;ll get back to you within 30 minutes. Same-day appointments available.
@@ -25,7 +25,7 @@ export default function BookOnlinePage() {
             <MultiStepForm />
           </div>
           <p className="text-center text-xs text-white/20 mt-6">
-            Prefer to call? <a href="tel:6019135975" className="text-[var(--color-orange)] hover:underline">601-913-5975</a> — available 24/7.
+            Prefer to call? <a href="tel:6019135975" className="text-[var(--color-brand)] hover:underline">601-913-5975</a> — available 24/7.
           </p>
         </div>
       </section>

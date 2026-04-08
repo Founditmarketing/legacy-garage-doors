@@ -51,7 +51,7 @@ export default function MultiStepForm() {
         <h3 className="text-2xl font-semibold text-white mb-3">Request Received!</h3>
         <p className="text-white/50 text-[15px] max-w-md mx-auto">
           We&apos;ll reach out within 30 minutes during business hours. For emergencies, call{" "}
-          <a href="tel:6019135975" className="text-[var(--color-orange)] font-medium">601-913-5975</a> now.
+          <a href="tel:6019135975" className="text-[var(--color-brand)] font-medium">601-913-5975</a> now.
         </p>
       </div>
     );
@@ -62,7 +62,7 @@ export default function MultiStepForm() {
       {/* Progress bar */}
       <div className="h-1 bg-white/[0.06] rounded-full mb-8 overflow-hidden">
         <motion.div
-          className="h-full bg-[var(--color-orange)] rounded-full"
+          className="h-full bg-[var(--color-brand)] rounded-full"
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.3 }}
         />
@@ -95,11 +95,11 @@ export default function MultiStepForm() {
                       onClick={() => setFormData({ ...formData, issueType: t.id })}
                       className={`p-4 rounded-xl text-left transition-all duration-200 border ${
                         isSelected
-                          ? "bg-[var(--color-orange)]/10 border-[var(--color-orange)]/30 text-white"
+                          ? "bg-[var(--color-brand)]/10 border-[var(--color-brand)]/30 text-white"
                           : "bg-white/[0.02] border-white/[0.06] text-white/60 hover:bg-white/[0.05] hover:text-white"
                       }`}
                     >
-                      <Icon size={22} className={isSelected ? "text-[var(--color-orange)]" : ""} />
+                      <Icon size={22} className={isSelected ? "text-[var(--color-brand)]" : ""} />
                       <div className="mt-3 text-sm font-medium">{t.label}</div>
                       <div className="text-xs text-white/30 mt-1">{t.desc}</div>
                     </button>

@@ -92,7 +92,7 @@ export default function Header() {
                       href={l.href}
                       className={`flex items-center gap-1 px-5 py-[7px] text-[13px] font-medium rounded-full whitespace-nowrap transition-all duration-200 ${
                         active
-                          ? "text-white bg-[var(--color-orange)]/15"
+                          ? "text-white bg-[var(--color-brand)]/15"
                           : "text-white/55 hover:text-white hover:bg-white/[0.06]"
                       }`}
                     >
@@ -110,7 +110,7 @@ export default function Header() {
                       >
                         <Link
                           href="/services"
-                          className="block px-3 py-2.5 text-[13px] font-semibold text-[var(--color-orange)] rounded-lg hover:bg-[var(--color-orange)]/10 mb-1 border-b border-white/[0.04] pb-3"
+                          className="block px-3 py-2.5 text-[13px] font-semibold text-[var(--color-brand)] rounded-lg hover:bg-[var(--color-brand)]/10 mb-1 border-b border-white/[0.04] pb-3"
                         >
                           All Services →
                         </Link>
@@ -139,7 +139,7 @@ export default function Header() {
                   href={l.href}
                   className={`px-5 py-[7px] text-[13px] font-medium rounded-full whitespace-nowrap transition-all duration-200 ${
                     active
-                      ? "text-white bg-[var(--color-orange)]/15"
+                      ? "text-white bg-[var(--color-brand)]/15"
                       : "text-white/55 hover:text-white hover:bg-white/[0.06]"
                   }`}
                 >
@@ -194,7 +194,7 @@ export default function Header() {
               </div>
               {mobileServicesOpen && (
                 <div className="py-2">
-                  <Link href="/services" onClick={() => setMobileOpen(false)} className="block pl-4 py-3 text-[15px] font-semibold text-[var(--color-orange)] border-b border-white/[0.03]">
+                  <Link href="/services" onClick={() => setMobileOpen(false)} className="block pl-4 py-3 text-[15px] font-semibold text-[var(--color-brand)] border-b border-white/[0.03]">
                     All Services →
                   </Link>
                   {serviceLinks.map((s) => (

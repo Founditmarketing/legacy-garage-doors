@@ -33,14 +33,14 @@ function ReviewCard({ review }: { review: (typeof reviews)[0] }) {
     <div className="flex-shrink-0 w-[380px] bg-[var(--color-surface)] border border-white/[0.06] rounded-2xl p-6 flex flex-col">
       <div className="flex gap-1 mb-4">
         {[...Array(5)].map((_, i) => (
-          <Star key={i} size={14} className="text-[var(--color-orange)] fill-[var(--color-orange)]" />
+          <Star key={i} size={14} className="text-[var(--color-brand)] fill-[var(--color-brand)]" />
         ))}
       </div>
       <p className="text-sm text-white/60 leading-relaxed flex-1 mb-5 font-light line-clamp-4">
         &quot;{review.text}&quot;
       </p>
       <div className="flex items-center gap-3">
-        <div className="w-9 h-9 rounded-full bg-[var(--color-orange)]/20 flex items-center justify-center text-[var(--color-orange)] text-xs font-semibold flex-shrink-0">
+        <div className="w-9 h-9 rounded-full bg-[var(--color-brand)]/20 flex items-center justify-center text-[var(--color-brand)] text-xs font-semibold flex-shrink-0">
           {review.initials}
         </div>
         <div>
@@ -58,7 +58,7 @@ export default function ReviewMarquee() {
   return (
     <section className="py-20 overflow-hidden">
       <div className="section-wrap mb-10">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-brand)] mb-3">
           Reviews
         </p>
         <div className="flex items-baseline justify-between flex-wrap gap-4">
@@ -69,7 +69,7 @@ export default function ReviewMarquee() {
             href="https://g.co/kgs/Legacy-Garage-Doors"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-[var(--color-orange)] font-medium hover:underline"
+            className="text-sm text-[var(--color-brand)] font-medium hover:underline"
           >
             See all 13 reviews →
           </a>

@@ -1,10 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight, Phone,
   DoorOpen, ClipboardCheck, Wrench, Search,
   Zap, CircleDot, CloudRain, Settings,
 } from "lucide-react";
+import CinematicHero from "@/components/CinematicHero";
 import TrustMarquee from "@/components/TrustMarquee";
 import ReviewMarquee from "@/components/ReviewMarquee";
 import MultiStepForm from "@/components/MultiStepForm";
@@ -20,67 +20,11 @@ const services = [
   { title: "Operator Replacements", icon: Settings, slug: "operator-replacements", desc: "Smart operators for the modern home." },
 ];
 
-const stats = [
-  { value: "10+", label: "Years Experience" },
-  { value: "5.0", label: "Google Rating" },
-  { value: "24/7", label: "Emergency Service" },
-  { value: "100%", label: "Satisfaction" },
-];
-
 export default function HomePage() {
   return (
-    <div className="page-enter">
-      {/* ── HERO ────────────────────────────────── */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/images/hero-craftsman.png"
-          alt="Premium craftsman garage door installation"
-          fill
-          className="object-cover"
-          priority
-          quality={90}
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-charcoal)]/90 via-[var(--color-charcoal)]/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-charcoal)] via-transparent to-transparent" />
-
-        <div className="relative z-10 section-wrap py-32">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-orange)] mb-5">
-              Hattiesburg&apos;s Trusted Garage Door Experts
-            </p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6">
-              Your Door.
-              <br />
-              <span className="text-gradient-orange">Done Right.</span>
-            </h1>
-            <p className="text-lg text-white/60 max-w-lg mb-10 leading-relaxed font-light">
-              24/7 emergency service. Lifetime warranty. Family-owned precision since day one.
-              We don&apos;t cut corners — we fix doors.
-            </p>
-
-            <div className="flex flex-wrap gap-4 mb-14">
-              <Link href="/book-online" className="btn-primary text-base">
-                Book Online <ArrowRight size={18} />
-              </Link>
-              <a href="tel:6019135975" className="btn-ghost text-base">
-                <Phone size={18} /> 601-913-5975
-              </a>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <div className="text-3xl font-bold text-[var(--color-orange)]">{s.value}</div>
-                  <div className="text-xs text-white/40 mt-1 uppercase tracking-wider font-medium">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    <div>
+      {/* ── CINEMATIC HERO ─────────────────────── */}
+      <CinematicHero />
 
       {/* ── TRUST BAR ──────────────────────────── */}
       <TrustMarquee />
@@ -88,7 +32,7 @@ export default function HomePage() {
       {/* ── SERVICES GRID ──────────────────────── */}
       <section className="py-20">
         <div className="section-wrap">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#3E6AE1] mb-3">
             What We Do
           </p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-12">
@@ -102,9 +46,9 @@ export default function HomePage() {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="group block p-6 bg-white/[0.02] border border-white/[0.05] rounded-2xl transition-all duration-300 hover:bg-white/[0.05] hover:border-[var(--color-orange)]/20 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(255,107,44,0.08)]"
+                  className="group block p-6 bg-white/[0.02] border border-white/[0.05] rounded-2xl transition-all duration-300 hover:bg-white/[0.05] hover:border-[#3E6AE1]/20 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(62,106,225,0.08)]"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[var(--color-orange)]/10 border border-[var(--color-orange)]/15 flex items-center justify-center mb-4 text-[var(--color-orange)] group-hover:bg-[var(--color-orange)]/15 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-[#3E6AE1]/10 border border-[#3E6AE1]/15 flex items-center justify-center mb-4 text-[#3E6AE1] group-hover:bg-[#3E6AE1]/15 transition-colors">
                     <Icon size={22} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-[15px] font-semibold mb-2">{s.title}</h3>
@@ -129,11 +73,11 @@ export default function HomePage() {
       <ReviewMarquee />
 
       {/* ── MULTI-STEP LEAD FORM ───────────────── */}
-      <section className="py-20 bg-[#141416]">
+      <section className="py-20 bg-[#111219]">
         <div className="section-wrap">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#3E6AE1] mb-3">
                 Get Started
               </p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
@@ -145,21 +89,21 @@ export default function HomePage() {
 
               <div className="space-y-4 text-sm text-white/30">
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[var(--color-orange)]/10 flex items-center justify-center text-[var(--color-orange)] text-xs">✓</div>
+                  <div className="w-6 h-6 rounded-full bg-[#3E6AE1]/10 flex items-center justify-center text-[#3E6AE1] text-xs">✓</div>
                   Free estimates — always
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[var(--color-orange)]/10 flex items-center justify-center text-[var(--color-orange)] text-xs">✓</div>
+                  <div className="w-6 h-6 rounded-full bg-[#3E6AE1]/10 flex items-center justify-center text-[#3E6AE1] text-xs">✓</div>
                   Response within 30 minutes
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[var(--color-orange)]/10 flex items-center justify-center text-[var(--color-orange)] text-xs">✓</div>
+                  <div className="w-6 h-6 rounded-full bg-[#3E6AE1]/10 flex items-center justify-center text-[#3E6AE1] text-xs">✓</div>
                   No hidden fees or upselling
                 </div>
               </div>
             </div>
 
-            <div className="bg-[var(--color-surface)] border border-white/[0.06] rounded-2xl p-8">
+            <div className="bg-[#16171f] border border-white/[0.06] rounded-2xl p-8">
               <MultiStepForm />
             </div>
           </div>

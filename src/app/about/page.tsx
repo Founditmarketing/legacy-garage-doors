@@ -21,7 +21,7 @@ export default function AboutPage() {
     <div className="page-enter">
       <section className="pt-32 pb-16 text-center">
         <div className="section-wrap">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-4">About Legacy</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-brand)] mb-4">About Legacy</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Craftsmanship Meets Integrity.</h1>
           <p className="text-white/40 text-lg max-w-xl mx-auto font-light">
             Family-owned and operated, serving Southern Mississippi with honesty and precision for over a decade.
@@ -33,10 +33,10 @@ export default function AboutPage() {
         <div className="section-wrap">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <div className="w-12 h-0.5 bg-gradient-to-r from-[var(--color-orange)] to-transparent mb-6" />
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-4">Our Story</p>
+              <div className="w-12 h-0.5 bg-gradient-to-r from-[var(--color-brand)] to-transparent mb-6" />
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-brand)] mb-4">Our Story</p>
               <h2 className="text-3xl font-semibold tracking-tight mb-6">
-                Servicing Garage Doors for <span className="text-gradient-orange">Over a Decade</span>
+                Servicing Garage Doors for <span className="text-gradient-brand">Over a Decade</span>
               </h2>
               <div className="space-y-5 text-[15px] text-white/50 leading-relaxed font-light">
                 <p>

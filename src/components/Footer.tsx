@@ -20,7 +20,7 @@ const companyLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#141416] border-t border-white/[0.04]">
+    <footer className="bg-[#111219] border-t border-white/[0.04]">
       <div className="section-wrap py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
@@ -42,7 +42,7 @@ export default function Footer() {
               href="https://www.facebook.com/legacygaragedoorsllc"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-white/30 hover:text-[var(--color-orange)] transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-white/30 hover:text-[var(--color-brand)] transition-colors"
             >
               <ExternalLink size={16} /> Facebook
             </a>
@@ -50,7 +50,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-5">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-brand)] mb-5">
               Services
             </h4>
             <ul className="space-y-3">
@@ -69,7 +69,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-5">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-brand)] mb-5">
               Company
             </h4>
             <ul className="space-y-3">
@@ -88,26 +88,26 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-5">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-brand)] mb-5">
               Contact
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-white/40 font-light">
-                <Phone size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-orange)]" />
+                <Phone size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-brand)]" />
                 <a href="tel:6019135975" className="hover:text-white transition-colors">
                   601-913-5975
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-white/40 font-light">
-                <Mail size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-orange)]" />
+                <Mail size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-brand)]" />
                 <span>legacygaragedoorsllc@gmail.com</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-white/40 font-light">
-                <MapPin size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-orange)]" />
+                <MapPin size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-brand)]" />
                 <span>Hattiesburg, MS &amp; surrounding areas</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-white/40 font-light">
-                <Clock size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-orange)]" />
+                <Clock size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-brand)]" />
                 <span>24/7 Emergency Service</span>
               </li>
             </ul>

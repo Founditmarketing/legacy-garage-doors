@@ -27,7 +27,7 @@ export default function ServicesPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 text-center">
         <div className="section-wrap">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-4">Our Services</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-brand)] mb-4">Our Services</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Expert Care for Every Door.</h1>
           <p className="text-white/40 text-lg max-w-xl mx-auto font-light">
             From preventive maintenance to full custom installations — we ensure your garage door operates safely and efficiently.
@@ -45,14 +45,14 @@ export default function ServicesPage() {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="group block p-7 bg-white/[0.02] border border-white/[0.05] rounded-2xl transition-all duration-300 hover:bg-white/[0.05] hover:border-[var(--color-orange)]/20 hover:-translate-y-1"
+                  className="group block p-7 bg-white/[0.02] border border-white/[0.05] rounded-2xl transition-all duration-300 hover:bg-white/[0.05] hover:border-[var(--color-brand)]/20 hover:-translate-y-1"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-[var(--color-orange)]/10 border border-[var(--color-orange)]/15 flex items-center justify-center mb-5 text-[var(--color-orange)] group-hover:bg-[var(--color-orange)]/15 transition-colors">
+                  <div className="w-14 h-14 rounded-2xl bg-[var(--color-brand)]/10 border border-[var(--color-brand)]/15 flex items-center justify-center mb-5 text-[var(--color-brand)] group-hover:bg-[var(--color-brand)]/15 transition-colors">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg font-semibold mb-2 tracking-tight">{s.title}</h3>
                   <p className="text-sm text-white/40 leading-relaxed mb-5 font-light">{s.desc}</p>
-                  <span className="text-sm font-medium text-[var(--color-orange)] flex items-center gap-1 group-hover:gap-2 transition-all">
+                  <span className="text-sm font-medium text-[var(--color-brand)] flex items-center gap-1 group-hover:gap-2 transition-all">
                     Learn More <ArrowRight size={14} />
                   </span>
                 </Link>

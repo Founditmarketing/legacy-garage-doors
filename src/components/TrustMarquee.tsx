@@ -23,7 +23,7 @@ export default function TrustMarquee() {
               key={`${b.label}-${i}`}
               className="flex items-center gap-2 px-8 whitespace-nowrap"
             >
-              <Icon size={15} className="text-[var(--color-orange)]" />
+              <Icon size={15} className="text-[var(--color-brand)]" />
               <span className="text-sm font-medium text-white/50">{b.label}</span>
             </div>
           );

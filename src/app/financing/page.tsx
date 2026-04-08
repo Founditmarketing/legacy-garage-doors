@@ -19,7 +19,7 @@ export default function FinancingPage() {
     <div className="page-enter">
       <section className="pt-32 pb-16 text-center">
         <div className="section-wrap">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-4">Financing</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-brand)] mb-4">Financing</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Flexible Payment Options.</h1>
           <p className="text-white/40 text-lg max-w-xl mx-auto font-light">
             Get the garage door you want today with plans that fit your budget. Quick application, instant decisions.
@@ -31,10 +31,10 @@ export default function FinancingPage() {
         <div className="section-wrap">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <div className="w-12 h-0.5 bg-gradient-to-r from-[var(--color-orange)] to-transparent mb-6" />
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-4">Benefits</p>
+              <div className="w-12 h-0.5 bg-gradient-to-r from-[var(--color-brand)] to-transparent mb-6" />
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-brand)] mb-4">Benefits</p>
               <h2 className="text-3xl font-semibold tracking-tight mb-6">
-                Smart Financing for <span className="text-gradient-orange">Your Home Investment</span>
+                Smart Financing for <span className="text-gradient-brand">Your Home Investment</span>
               </h2>
               <p className="text-[15px] text-white/50 leading-relaxed font-light mb-8">
                 A new garage door is one of the best investments you can make in your home&apos;s value and security. We&apos;ve partnered with leading lenders to offer flexible solutions that make it easy.
@@ -48,10 +48,10 @@ export default function FinancingPage() {
               {benefits.map((b, i) => (
                 <div
                   key={i}
-                  className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-[var(--color-orange)]/15 transition-colors"
+                  className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-[var(--color-brand)]/15 transition-colors"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-lg bg-[var(--color-orange)]/10 flex items-center justify-center text-[var(--color-orange)] text-sm font-bold flex-shrink-0 mt-0.5">
+                    <div className="w-8 h-8 rounded-lg bg-[var(--color-brand)]/10 flex items-center justify-center text-[var(--color-brand)] text-sm font-bold flex-shrink-0 mt-0.5">
                       {i + 1}
                     </div>
                     <div>

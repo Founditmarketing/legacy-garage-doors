@@ -19,7 +19,7 @@ export default function ContactPage() {
     <div className="page-enter">
       <section className="pt-32 pb-16 text-center">
         <div className="section-wrap">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-4">Contact</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-brand)] mb-4">Contact</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Let&apos;s Talk.</h1>
           <p className="text-white/40 text-lg max-w-xl mx-auto font-light">
             Questions, emergencies, or free estimates — we&apos;re here for you, 24/7.
@@ -31,10 +31,10 @@ export default function ContactPage() {
         <div className="section-wrap">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <div className="w-12 h-0.5 bg-gradient-to-r from-[var(--color-orange)] to-transparent mb-6" />
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-orange)] mb-4">Get in Touch</p>
+              <div className="w-12 h-0.5 bg-gradient-to-r from-[var(--color-brand)] to-transparent mb-6" />
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-brand)] mb-4">Get in Touch</p>
               <h2 className="text-3xl font-semibold tracking-tight mb-6">
-                We&apos;d love to <span className="text-gradient-orange">hear from you</span>.
+                We&apos;d love to <span className="text-gradient-brand">hear from you</span>.
               </h2>
               <p className="text-[15px] text-white/50 leading-relaxed font-light mb-10">
                 Whether you need an emergency repair at midnight or want to schedule a free estimate for a new installation, our team is ready to help.
@@ -43,8 +43,8 @@ export default function ContactPage() {
                 {contactInfo.map((c) => {
                   const Icon = c.icon;
                   const inner = (
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-[var(--color-orange)]/15 transition-colors">
-                      <div className="w-10 h-10 rounded-xl bg-[var(--color-orange)]/10 flex items-center justify-center text-[var(--color-orange)] flex-shrink-0">
+                    <div className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-[var(--color-brand)]/15 transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-[var(--color-brand)]/10 flex items-center justify-center text-[var(--color-brand)] flex-shrink-0">
                         <Icon size={18} />
                       </div>
                       <div>
