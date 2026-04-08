@@ -4,16 +4,16 @@ import { Star } from 'lucide-react';
 
 const reviews = [
   {
-    text: 'Our new Legacy garage doors surpassed our expectations. Classic, sleek, and installed in under a day — even on our 60-year-old home. A solid investment.',
-    name: 'Anne V.', location: 'Hattiesburg', initials: 'AV',
+    text: 'I had such a great experience with Legacy garage door company! From the very first call, everyone was super nice and easy to work with. The installers showed up right on time, got straight to work, and honestly made the whole thing look effortless. They were friendly, answered all my random questions, and made sure everything worked perfectly before they left. Great people, great service, and a super smooth install. If you\'re thinking about getting a new garage door, these are absolutely the folks to call!',
+    name: 'Cory A.', location: 'Google Review', initials: 'CA',
   },
   {
-    text: 'Called at 8 PM for an emergency spring replacement. Tech was at my house within the hour. Professional, clean, and priced fairly. Won\'t use anyone else.',
-    name: 'Marcus H.', location: 'Petal, MS', initials: 'MH',
+    text: 'I have used other garage door company\'s in the past but Legacy Garage Doors is by far the best. The owner Seth and his employee Benjamin completed the work I needed and were extremely professional. They took the time to explain their processes and what I needed to do to maintain my garage door and opener in the future. The price was more than competitive and very fair. I would never hesitate to hire Legacy Garage Doors again and would tell everyone to do the same.',
+    name: 'Lowell P.', location: 'Google Review', initials: 'LP',
   },
   {
-    text: 'The quality of the door itself is remarkable — heavy, insulated, silent. Legacy treated this job like it was their own home. Highly recommend.',
-    name: 'Sandra K.', location: 'Purvis, MS', initials: 'SK',
+    text: 'Appointment scheduled within 24 hours and door was fixed the same day. Very timely and reasonably priced. Would recommend and will use again if needed.',
+    name: 'Michelle J.', location: 'Google Review', initials: 'MJ',
   },
 ];
 

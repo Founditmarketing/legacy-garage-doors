@@ -1,43 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
-
-/* ── Same custom SVG icons from ServiceOverview ────── */
-const GarageDoorIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="20" rx="2" stroke="currentColor" strokeWidth="1.5"/><line x1="4" y1="13" x2="28" y2="13" stroke="currentColor" strokeWidth="1.2"/><line x1="4" y1="18" x2="28" y2="18" stroke="currentColor" strokeWidth="1.2"/><line x1="4" y1="23" x2="28" y2="23" stroke="currentColor" strokeWidth="1.2"/><path d="M8 4h16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><rect x="22" y="19" width="2" height="3" rx="0.5" fill="currentColor"/></svg>
-);
-const MaintenanceIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="6" y="4" width="12" height="16" rx="1" stroke="currentColor" strokeWidth="1.5"/><path d="M9 9h6M9 12h4M9 15h5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/><circle cx="22" cy="22" r="6" stroke="currentColor" strokeWidth="1.5"/><path d="M22 19v3l2 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
-);
-const RepairIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M10 22l12-12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M20 6l6 6-3 3-6-6 3-3z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><path d="M6 26l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><circle cx="7" cy="25" r="2" stroke="currentColor" strokeWidth="1.2"/></svg>
-);
-const DiagnosticIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="14" cy="14" r="8" stroke="currentColor" strokeWidth="1.5"/><path d="M20 20l6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M11 14h6M14 11v6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
-);
-const SpringIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 6c4 0 4 4 8 4s4-4 8-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M8 12c4 0 4 4 8 4s4-4 8-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M8 18c4 0 4 4 8 4s4-4 8-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M8 24c4 0 4 4 8 4s4-4 8-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
-);
-const CableIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 4v24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M24 4v24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M8 10h16M8 16h16M8 22h16" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeDasharray="2 2"/><circle cx="8" cy="4" r="2" stroke="currentColor" strokeWidth="1.2"/><circle cx="24" cy="4" r="2" stroke="currentColor" strokeWidth="1.2"/></svg>
-);
-const WeatherIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 28V8a2 2 0 012-2h16a2 2 0 012 2v20" stroke="currentColor" strokeWidth="1.5"/><path d="M2 28h28" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M10 14s2-3 6-3 6 3 6 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/><path d="M12 20h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
-);
-const OperatorIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="8" y="6" width="16" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M12 10h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/><path d="M16 16v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><circle cx="16" cy="24" r="3" stroke="currentColor" strokeWidth="1.5"/></svg>
-);
+import { ArrowRight, DoorOpen, ClipboardCheck, Wrench, Search, Zap, CircleDot, CloudRain, Cable, Settings } from 'lucide-react';
 
 const allServices = [
-  { title: 'New Garage Door Sales & Installation', desc: 'Upgrade your home\'s curb appeal with premium brands — Clopay, Amarr, Chamberlain — and professional installation.', Icon: GarageDoorIcon, promo: false },
-  { title: 'Preventative Maintenance', desc: 'Keep your system running smoothly and avoid costly emergency repairs with routine care and inspection.', Icon: MaintenanceIcon, promo: false },
-  { title: 'Repairs on Doors & Operators', desc: 'Broken panels, malfunctioning motors, misaligned tracks — we repair all makes and models, same day.', Icon: RepairIcon, promo: false },
-  { title: 'Diagnostic Service Calls', desc: 'Expert troubleshooting that identifies the root cause before a single wrench turns.', Icon: DiagnosticIcon, promo: false },
-  { title: 'Spring Replacements', desc: 'Safe, professional replacement of high-tension springs. Currently $75 OFF — limited time.', Icon: SpringIcon, promo: true },
-  { title: 'Rollers & Cables', desc: 'Smooth out noisy operation and ensure safety with fresh nylon rollers and heavy-duty cables.', Icon: CableIcon, promo: false },
-  { title: 'Weather Seals', desc: 'Protect your garage from pests, dust, and drafts with professional weather stripping.', Icon: WeatherIcon, promo: false },
-  { title: 'Operator Replacements', desc: 'Modern, quiet, smart-connected openers from LiftMaster and Chamberlain.', Icon: OperatorIcon, promo: false },
+  { title: 'New Garage Door Sales & Installation', slug: 'new-installations', desc: 'Upgrade your home\'s curb appeal with premium brands — Clopay, Amarr, Chamberlain — and professional installation.', Icon: DoorOpen },
+  { title: 'Preventative Maintenance', slug: 'preventive-maintenance', desc: 'Keep your system running smoothly and avoid costly emergency repairs with routine care and inspection.', Icon: ClipboardCheck },
+  { title: 'Repairs on Doors & Operators', slug: 'expert-repairs', desc: 'Broken panels, malfunctioning motors, misaligned tracks — we repair all makes and models, same day.', Icon: Wrench },
+  { title: 'Diagnostic Service Calls', slug: 'diagnostic-service', desc: 'Expert troubleshooting that identifies the root cause before a single wrench turns.', Icon: Search },
+  { title: 'Spring Replacements', slug: 'spring-replacements', desc: 'Safe, professional replacement of high-tension springs with lifetime warranty.', Icon: Zap },
+  { title: 'Rollers & Cables', slug: 'rollers-and-cables', desc: 'Smooth out noisy operation and ensure safety with fresh nylon rollers and heavy-duty cables.', Icon: CircleDot },
+  { title: 'Weather Seals', slug: 'weather-seals', desc: 'Protect your garage from pests, dust, and drafts with professional weather stripping.', Icon: CloudRain },
+  { title: 'Operator Replacements', slug: 'operator-replacements', desc: 'Modern, quiet, smart-connected openers from LiftMaster and Chamberlain.', Icon: Settings },
 ];
 
 export default function Services() {
@@ -96,17 +70,6 @@ export default function Services() {
                     background: 'linear-gradient(90deg, transparent, rgba(62,106,225,0.2), transparent)',
                   }} />
 
-                  {/* Promo badge */}
-                  {s.promo && (
-                    <span style={{
-                      position: 'absolute', top: 16, right: 16,
-                      background: 'linear-gradient(135deg, #3E6AE1, #818cf8)',
-                      color: '#fff', fontSize: 11,
-                      fontWeight: 600, padding: '4px 12px', borderRadius: 100,
-                      boxShadow: '0 4px 15px rgba(62,106,225,0.3)',
-                    }}>$75 OFF</span>
-                  )}
-
                   {/* Icon */}
                   <div style={{
                     width: 56, height: 56, borderRadius: 14,
@@ -116,7 +79,7 @@ export default function Services() {
                     marginBottom: 24,
                     color: '#3E6AE1',
                   }}>
-                    <Icon />
+                    <Icon size={24} strokeWidth={1.5} />
                   </div>
 
                   <h3 style={{ fontSize: 18, fontWeight: 600, color: '#f0f2f5', marginBottom: 10, letterSpacing: '-0.01em' }}>
@@ -125,7 +88,7 @@ export default function Services() {
                   <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.4)', lineHeight: 1.7, marginBottom: 24, fontWeight: 300 }}>
                     {s.desc}
                   </p>
-                  <Link to="/book-online" style={{
+                  <Link to={`/services/${s.slug}`} style={{
                     display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6,
                     height: 38, padding: '0 20px', fontSize: 13, fontWeight: 500,
                     background: 'rgba(62,106,225,0.1)',
@@ -145,7 +108,7 @@ export default function Services() {
                     el.style.color = '#3E6AE1';
                     el.style.borderColor = 'rgba(62,106,225,0.2)';
                   }}
-                  >Book Now <ArrowRight size={12} /></Link>
+                  >Learn More <ArrowRight size={12} /></Link>
                 </motion.div>
               );
             })}

@@ -1,105 +1,28 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-
-/* ── Custom SVG Service Icons ────────────────────────── */
-const GarageDoorIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-    <rect x="4" y="8" width="24" height="20" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-    <line x1="4" y1="13" x2="28" y2="13" stroke="currentColor" strokeWidth="1.2"/>
-    <line x1="4" y1="18" x2="28" y2="18" stroke="currentColor" strokeWidth="1.2"/>
-    <line x1="4" y1="23" x2="28" y2="23" stroke="currentColor" strokeWidth="1.2"/>
-    <path d="M8 4h16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    <rect x="22" y="19" width="2" height="3" rx="0.5" fill="currentColor"/>
-  </svg>
-);
-
-const MaintenanceIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-    <rect x="6" y="4" width="12" height="16" rx="1" stroke="currentColor" strokeWidth="1.5"/>
-    <path d="M9 9h6M9 12h4M9 15h5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-    <circle cx="22" cy="22" r="6" stroke="currentColor" strokeWidth="1.5"/>
-    <path d="M22 19v3l2 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-  </svg>
-);
-
-const RepairIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-    <path d="M10 22l12-12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    <path d="M20 6l6 6-3 3-6-6 3-3z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-    <path d="M6 26l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    <circle cx="7" cy="25" r="2" stroke="currentColor" strokeWidth="1.2"/>
-  </svg>
-);
-
-const DiagnosticIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-    <circle cx="14" cy="14" r="8" stroke="currentColor" strokeWidth="1.5"/>
-    <path d="M20 20l6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    <path d="M11 14h6M14 11v6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-  </svg>
-);
-
-const RollerIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-    <circle cx="10" cy="22" r="5" stroke="currentColor" strokeWidth="1.5"/>
-    <circle cx="10" cy="22" r="1.5" fill="currentColor"/>
-    <circle cx="22" cy="22" r="5" stroke="currentColor" strokeWidth="1.5"/>
-    <circle cx="22" cy="22" r="1.5" fill="currentColor"/>
-    <path d="M10 17V8h12v9" stroke="currentColor" strokeWidth="1.5"/>
-    <path d="M15 22h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-  </svg>
-);
-
-const SpringIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-    <path d="M8 6c4 0 4 4 8 4s4-4 8-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    <path d="M8 12c4 0 4 4 8 4s4-4 8-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    <path d="M8 18c4 0 4 4 8 4s4-4 8-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    <path d="M8 24c4 0 4 4 8 4s4-4 8-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-  </svg>
-);
-
-const WeatherIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-    <path d="M6 28V8a2 2 0 012-2h16a2 2 0 012 2v20" stroke="currentColor" strokeWidth="1.5"/>
-    <path d="M2 28h28" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    <path d="M10 14s2-3 6-3 6 3 6 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-    <path d="M12 20h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-    <path d="M14 23h4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-  </svg>
-);
-
-const CableIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-    <path d="M8 4v24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    <path d="M24 4v24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    <path d="M8 10h16M8 16h16M8 22h16" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeDasharray="2 2"/>
-    <circle cx="8" cy="4" r="2" stroke="currentColor" strokeWidth="1.2"/>
-    <circle cx="24" cy="4" r="2" stroke="currentColor" strokeWidth="1.2"/>
-  </svg>
-);
-
-const OperatorIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-    <rect x="8" y="6" width="16" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-    <path d="M12 10h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-    <path d="M16 16v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    <circle cx="16" cy="24" r="3" stroke="currentColor" strokeWidth="1.5"/>
-    <path d="M14.5 24l1.5 1.5 1.5-1.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
+import {
+  DoorOpen,
+  ClipboardCheck,
+  Wrench,
+  Search,
+  CircleDot,
+  Zap,
+  CloudRain,
+  Cable,
+  Settings,
+} from 'lucide-react';
 
 const services = [
-  { title: 'New Installations', icon: GarageDoorIcon, desc: 'Custom doors engineered for your home — premium brands, expert installation.' },
-  { title: 'Preventive Maintenance', icon: MaintenanceIcon, desc: 'Routine care to avoid costly breakdowns and extend door life.' },
-  { title: 'Expert Repairs', icon: RepairIcon, desc: 'Same-day service. Any issue, any brand — resolved fast.' },
-  { title: 'Diagnostic Service', icon: DiagnosticIcon, desc: 'Precision fault detection & detailed reporting.' },
-  { title: 'Roller Replacement', icon: RollerIcon, desc: 'Silent nylon rollers for buttery-smooth operation.' },
-  { title: 'Spring Replacements', icon: SpringIcon, desc: 'High-cycle springs with lifetime warranty.' },
-  { title: 'Weather Seals', icon: WeatherIcon, desc: 'Total protection from rain, pests, and drafts.' },
-  { title: 'Cables', icon: CableIcon, desc: 'Aircraft-grade cables, properly tensioned.' },
-  { title: 'Operator Replacements', icon: OperatorIcon, desc: 'Smart operators for the modern home.' },
+  { title: 'New Installations', icon: DoorOpen, slug: 'new-installations', desc: 'Custom doors engineered for your home — premium brands, expert installation.' },
+  { title: 'Preventive Maintenance', icon: ClipboardCheck, slug: 'preventive-maintenance', desc: 'Routine care to avoid costly breakdowns and extend door life.' },
+  { title: 'Expert Repairs', icon: Wrench, slug: 'expert-repairs', desc: 'Same-day service. Any issue, any brand — resolved fast.' },
+  { title: 'Diagnostic Service', icon: Search, slug: 'diagnostic-service', desc: 'Precision fault detection & detailed reporting.' },
+  { title: 'Roller Replacement', icon: CircleDot, slug: 'rollers-and-cables', desc: 'Silent nylon rollers for buttery-smooth operation.' },
+  { title: 'Spring Replacements', icon: Zap, slug: 'spring-replacements', desc: 'High-cycle springs with lifetime warranty.' },
+  { title: 'Weather Seals', icon: CloudRain, slug: 'weather-seals', desc: 'Total protection from rain, pests, and drafts.' },
+  { title: 'Cables', icon: Cable, slug: 'rollers-and-cables', desc: 'Aircraft-grade cables, properly tensioned.' },
+  { title: 'Operator Replacements', icon: Settings, slug: 'operator-replacements', desc: 'Smart operators for the modern home.' },
 ];
 
 export default function ServiceOverview() {
@@ -155,7 +78,7 @@ export default function ServiceOverview() {
                 transition={{ duration: 0.4, delay: (i % 3) * 0.06 }}
               >
                 <Link
-                  to="/services"
+                  to={`/services/${s.slug}`}
                   onMouseEnter={() => setHoveredIdx(i)}
                   onMouseLeave={() => setHoveredIdx(null)}
                   style={{
@@ -197,7 +120,7 @@ export default function ServiceOverview() {
                     color: '#3E6AE1',
                     boxShadow: isHovered ? '0 0 20px rgba(62,106,225,0.2)' : 'none',
                   }}>
-                    <Icon />
+                    <Icon size={22} strokeWidth={1.5} />
                   </div>
                   <h3 style={{
                     fontSize: 16, fontWeight: 600, color: '#f0f2f5',

@@ -1,10 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, ArrowRight } from 'lucide-react';
+import { Menu, X, Phone, ArrowRight, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
+const serviceSubLinks = [
+  { name: 'New Installations', href: '/services/new-installations' },
+  { name: 'Preventive Maintenance', href: '/services/preventive-maintenance' },
+  { name: 'Expert Repairs', href: '/services/expert-repairs' },
+  { name: 'Diagnostic Service', href: '/services/diagnostic-service' },
+  { name: 'Spring Replacements', href: '/services/spring-replacements' },
+  { name: 'Rollers & Cables', href: '/services/rollers-and-cables' },
+  { name: 'Weather Seals', href: '/services/weather-seals' },
+  { name: 'Operator Replacements', href: '/services/operator-replacements' },
+];
+
 const navLinks = [
-  { name: 'Services', href: '/services' },
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services', hasDropdown: true },
   { name: 'Financing', href: '/financing' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
@@ -13,6 +25,9 @@ const navLinks = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const loc = useLocation();
 
   useEffect(() => {
@@ -20,10 +35,21 @@ export default function Header() {
     window.addEventListener('scroll', fn, { passive: true });
     return () => window.removeEventListener('scroll', fn);
   }, []);
-  useEffect(() => setMobileOpen(false), [loc.pathname]);
+  useEffect(() => {
+    setMobileOpen(false);
+    setDropdownOpen(false);
+  }, [loc.pathname]);
 
   const isHome = loc.pathname === '/';
   const clear = isHome && !scrolled && !mobileOpen;
+
+  const openDropdown = () => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    setDropdownOpen(true);
+  };
+  const closeDropdown = () => {
+    dropdownTimeout.current = setTimeout(() => setDropdownOpen(false), 150);
+  };
 
   return (
     <>
@@ -117,7 +143,132 @@ export default function Header() {
             }}
           >
             {navLinks.map((l) => {
-              const active = loc.pathname === l.href;
+              const active = loc.pathname === l.href || (l.hasDropdown && loc.pathname.startsWith('/services'));
+              
+              if (l.hasDropdown) {
+                return (
+                  <div
+                    key={l.name}
+                    style={{ position: 'relative' }}
+                    onMouseEnter={openDropdown}
+                    onMouseLeave={closeDropdown}
+                  >
+                    <Link
+                      to={l.href}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 4,
+                        padding: '7px 20px',
+                        fontSize: 13,
+                        fontWeight: 500,
+                        borderRadius: 100,
+                        color: active ? '#fff' : 'rgba(255,255,255,0.55)',
+                        background: active ? 'rgba(62,106,225,0.15)' : 'transparent',
+                        transition: 'all 0.3s',
+                        whiteSpace: 'nowrap',
+                        letterSpacing: '-0.01em',
+                      }}
+                    >
+                      {l.name}
+                      <ChevronDown
+                        size={11}
+                        style={{
+                          transition: 'transform 0.25s',
+                          transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0)',
+                          opacity: 0.5,
+                        }}
+                      />
+                    </Link>
+
+                    {/* Dropdown */}
+                    <AnimatePresence>
+                      {dropdownOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 6, scale: 0.97 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                          transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                          style={{
+                            position: 'absolute',
+                            top: 'calc(100% + 10px)',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            width: 260,
+                            background: 'rgba(12,13,20,0.95)',
+                            backdropFilter: 'blur(24px) saturate(180%)',
+                            border: '1px solid rgba(255,255,255,0.08)',
+                            borderRadius: 14,
+                            padding: '8px',
+                            boxShadow: '0 16px 48px rgba(0,0,0,0.4), 0 0 1px rgba(255,255,255,0.05)',
+                          }}
+                        >
+                          {/* Arrow */}
+                          <div style={{
+                            position: 'absolute',
+                            top: -5,
+                            left: '50%',
+                            transform: 'translateX(-50%) rotate(45deg)',
+                            width: 10,
+                            height: 10,
+                            background: 'rgba(12,13,20,0.95)',
+                            border: '1px solid rgba(255,255,255,0.08)',
+                            borderRight: 'none',
+                            borderBottom: 'none',
+                          }} />
+
+                          <Link
+                            to="/services"
+                            style={{
+                              display: 'block',
+                              padding: '10px 14px',
+                              fontSize: 13,
+                              fontWeight: 600,
+                              color: '#3E6AE1',
+                              borderRadius: 8,
+                              transition: 'background 0.2s',
+                              borderBottom: '1px solid rgba(255,255,255,0.04)',
+                              marginBottom: 4,
+                            }}
+                            onMouseEnter={e => (e.currentTarget.style.background = 'rgba(62,106,225,0.08)')}
+                            onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+                          >
+                            All Services →
+                          </Link>
+
+                          {serviceSubLinks.map((sub) => (
+                            <Link
+                              key={sub.name}
+                              to={sub.href}
+                              style={{
+                                display: 'block',
+                                padding: '9px 14px',
+                                fontSize: 12.5,
+                                fontWeight: 400,
+                                color: loc.pathname === sub.href ? '#fff' : 'rgba(255,255,255,0.55)',
+                                borderRadius: 8,
+                                transition: 'all 0.2s',
+                                letterSpacing: '-0.01em',
+                              }}
+                              onMouseEnter={e => {
+                                e.currentTarget.style.background = 'rgba(255,255,255,0.06)';
+                                e.currentTarget.style.color = '#fff';
+                              }}
+                              onMouseLeave={e => {
+                                e.currentTarget.style.background = 'transparent';
+                                e.currentTarget.style.color = loc.pathname === sub.href ? '#fff' : 'rgba(255,255,255,0.55)';
+                              }}
+                            >
+                              {sub.name}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={l.name}
@@ -128,9 +279,7 @@ export default function Header() {
                     fontWeight: 500,
                     borderRadius: 100,
                     color: active ? '#fff' : 'rgba(255,255,255,0.55)',
-                    background: active
-                      ? 'rgba(62,106,225,0.15)'
-                      : 'transparent',
+                    background: active ? 'rgba(62,106,225,0.15)' : 'transparent',
                     transition: 'all 0.3s',
                     whiteSpace: 'nowrap',
                     letterSpacing: '-0.01em',
@@ -251,12 +400,116 @@ export default function Header() {
             }}
           >
             <nav style={{ display: 'flex', flexDirection: 'column' }}>
-              {navLinks.map((l, i) => (
+              {/* Home link */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0 }}
+              >
+                <Link
+                  to="/"
+                  onClick={() => setMobileOpen(false)}
+                  style={{
+                    display: 'block',
+                    padding: '20px 0',
+                    fontSize: 24,
+                    fontWeight: 500,
+                    color: '#fff',
+                    borderBottom: '1px solid rgba(255,255,255,0.06)',
+                    letterSpacing: '-0.02em',
+                  }}
+                >
+                  Home
+                </Link>
+              </motion.div>
+
+              {/* Services with expandable sub-menu */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.04 }}
+              >
+                <div
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    padding: '20px 0',
+                    fontSize: 24,
+                    fontWeight: 500,
+                    color: '#fff',
+                    borderBottom: '1px solid rgba(255,255,255,0.06)',
+                    letterSpacing: '-0.02em',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Services
+                  <ChevronDown
+                    size={20}
+                    style={{
+                      transition: 'transform 0.3s',
+                      transform: mobileServicesOpen ? 'rotate(180deg)' : 'rotate(0)',
+                      opacity: 0.4,
+                    }}
+                  />
+                </div>
+                <AnimatePresence>
+                  {mobileServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      style={{ overflow: 'hidden' }}
+                    >
+                      <Link
+                        to="/services"
+                        onClick={() => setMobileOpen(false)}
+                        style={{
+                          display: 'block',
+                          padding: '14px 0 14px 16px',
+                          fontSize: 15,
+                          fontWeight: 600,
+                          color: '#3E6AE1',
+                          borderBottom: '1px solid rgba(255,255,255,0.03)',
+                        }}
+                      >
+                        All Services →
+                      </Link>
+                      {serviceSubLinks.map((sub) => (
+                        <Link
+                          key={sub.name}
+                          to={sub.href}
+                          onClick={() => setMobileOpen(false)}
+                          style={{
+                            display: 'block',
+                            padding: '12px 0 12px 16px',
+                            fontSize: 15,
+                            fontWeight: 400,
+                            color: 'rgba(255,255,255,0.55)',
+                            borderBottom: '1px solid rgba(255,255,255,0.03)',
+                          }}
+                        >
+                          {sub.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+
+              {/* Remaining links */}
+              {[
+                { name: 'Financing', href: '/financing' },
+                { name: 'About', href: '/about' },
+                { name: 'Contact', href: '/contact' },
+              ].map((l, i) => (
                 <motion.div
                   key={l.name}
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: i * 0.04 }}
+                  transition={{ duration: 0.3, delay: (i + 2) * 0.04 }}
                 >
                   <Link
                     to={l.href}
