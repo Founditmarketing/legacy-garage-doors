@@ -62,9 +62,9 @@ export default function Header() {
             <Image
               src="/images/logo-shield.png"
               alt="Legacy Garage Doors"
-              width={120}
-              height={120}
-              className="h-20 w-auto object-contain"
+              width={160}
+              height={160}
+              className="h-28 w-auto object-contain"
               style={{ filter: "brightness(1.2)" }}
               priority
             />
