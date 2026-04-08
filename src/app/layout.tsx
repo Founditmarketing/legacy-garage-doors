@@ -33,6 +33,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Legacy Garage Doors",
+    images: [
+      {
+        url: "https://legacy-garage-doors.vercel.app/images/og-image.png",
+        width: 1024,
+        height: 1024,
+        alt: "Legacy Garage Doors — Service You Can Trust",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Legacy Garage Doors | 24/7 Service — Hattiesburg, MS",
+    description:
+      "Family-owned garage door experts. 24/7 emergency service, lifetime warranty, 5.0★ Google rated.",
+    images: ["https://legacy-garage-doors.vercel.app/images/og-image.png"],
   },
 };
 
