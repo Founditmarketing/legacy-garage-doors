@@ -56,7 +56,7 @@ export default function Header() {
           borderBottom: clear ? "none" : "1px solid rgba(255,255,255,0.06)",
         }}
       >
-        <div className="section-wrap flex items-center justify-between h-16">
+        <div className="section-wrap flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
