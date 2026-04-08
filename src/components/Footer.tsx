@@ -29,10 +29,10 @@ export default function Footer() {
               <Image
                 src="/images/logo-shield.png"
                 alt="Legacy Garage Doors"
-                width={160}
-                height={160}
-                className="h-28 w-auto mb-4"
-                style={{ filter: "brightness(1.2)" }}
+                width={240}
+                height={240}
+                className="h-36 w-auto mb-4"
+                style={{ filter: "brightness(1.15) invert(1) hue-rotate(180deg)" }}
               />
             </Link>
             <p className="text-sm text-white/40 leading-relaxed max-w-[220px] mb-4 font-light">
