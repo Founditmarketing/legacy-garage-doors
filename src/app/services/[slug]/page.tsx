@@ -60,7 +60,7 @@ const serviceData: Record<string, {
     title: "Spring Replacements",
     desc: "Garage door spring replacement in Hattiesburg, MS. High-cycle springs, lifetime warranty.",
     image: "/images/service-spring-replacements.png",
-    imageAlt: "Close-up of electrical wiring and circuit breakers for garage door system",
+    imageAlt: "Interior view of garage with door system showing tracks, springs, and ceiling-mounted operator",
     paragraphs: [
       "Garage door springs are under extreme tension and are one of the most dangerous components to work with — this is never a DIY job. Legacy technicians are trained and equipped to safely remove and replace both torsion and extension springs. We use high-cycle springs rated for 20,000+ cycles, which means they'll last significantly longer than standard-grade components. Every spring replacement includes a full system rebalancing so your door tracks smoothly and your opener isn't working harder than it needs to.",
       "Most spring replacements are completed within an hour. We always replace springs in matched pairs — even if only one has broken — because the second spring is almost certainly near the end of its life as well. Replacing both at once saves you from a second service call and ensures even tension across the system. All spring work is covered by our lifetime labor warranty.",
@@ -93,7 +93,7 @@ const serviceData: Record<string, {
     title: "Operator Replacements",
     desc: "Garage door opener replacement in Hattiesburg, MS. LiftMaster, Chamberlain smart openers.",
     image: "/images/service-operator-replacements.png",
-    imageAlt: "Interior view of garage door with ceiling-mounted operator and track system",
+    imageAlt: "Close-up of electrical wiring and circuit breakers for garage door operator system",
     paragraphs: [
       "If your garage door opener is more than 10 years old, it's likely louder, slower, and less secure than modern alternatives. Legacy installs smart-enabled operators from LiftMaster and Chamberlain that feature ultra-quiet belt-drive motors, built-in WiFi, battery backup, and integration with home automation systems. You can open, close, and monitor your garage from anywhere using your phone.",
       "We handle the full replacement process: removing your old unit, installing the new operator, programming remotes and keypads, setting force and travel limits, and testing safety reversal sensors. We'll also walk you through the app setup so you're comfortable using all the smart features before we leave. Every operator installation includes our lifetime labor warranty.",
