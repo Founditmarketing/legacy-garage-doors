@@ -11,8 +11,8 @@ const SLIDES = [
   },
   {
     image: '/images/garage-house-1.jpg',
-    words: ['Whisper-Quiet.', 'Effortlessly', 'Smooth.'],
-    sub: 'Belt-drive technology that eliminates noise. Your home stays peaceful, day or night.',
+    words: ['Open', '24/7.', 'No', 'Exceptions.'],
+    sub: 'Emergency service when you need it. We answer the phone at midnight, weekends, and holidays.',
   },
   {
     image: '/images/garage-house-2.jpg',
