@@ -60,7 +60,7 @@ const serviceData: Record<string, {
     title: "Spring Replacements",
     desc: "Garage door spring replacement in Hattiesburg, MS. High-cycle springs, lifetime warranty.",
     image: "/images/service-spring-replacements.png",
-    imageAlt: "Interior view of garage with door system showing tracks, springs, and ceiling-mounted operator",
+    imageAlt: "Residential home exterior with garage doors",
     paragraphs: [
       "Garage door springs are under extreme tension and are one of the most dangerous components to work with — this is never a DIY job. Legacy technicians are trained and equipped to safely remove and replace both torsion and extension springs. We use high-cycle springs rated for 20,000+ cycles, which means they'll last significantly longer than standard-grade components. Every spring replacement includes a full system rebalancing so your door tracks smoothly and your opener isn't working harder than it needs to.",
       "Most spring replacements are completed within an hour. We always replace springs in matched pairs — even if only one has broken — because the second spring is almost certainly near the end of its life as well. Replacing both at once saves you from a second service call and ensures even tension across the system. All spring work is covered by our lifetime labor warranty.",
@@ -71,7 +71,7 @@ const serviceData: Record<string, {
     title: "Rollers & Cables",
     desc: "Garage door roller and cable replacement in Hattiesburg, MS. Nylon rollers, aircraft-grade cables.",
     image: "/images/service-rollers-and-cables.png",
-    imageAlt: "Close-up detail of wooden garage door panels with glass windows",
+    imageAlt: "Residential home with garage doors and driveway",
     paragraphs: [
       "Worn rollers are the number one cause of noisy garage doors. Legacy replaces standard steel rollers with precision-bearing nylon rollers that reduce operating noise by up to 75%. The difference is immediate and dramatic — a door that used to rattle the house will glide open almost silently. We also inspect and replace frayed or damaged cables, which are critical safety components that prevent the door from free-falling if a spring fails.",
       "Cable and roller replacements are typically completed in under an hour. We use aircraft-grade galvanized steel cables that resist corrosion in Mississippi's humid conditions. During every roller or cable job, we also inspect the track alignment and hinges, since these components work together as a system. If anything else needs attention, we'll let you know before proceeding.",
@@ -153,7 +153,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       />
 
       {/* Hero Image */}
-      <section className="relative h-[340px] md:h-[420px] overflow-hidden">
+      <section className="relative h-[450px] md:h-[560px] overflow-hidden">
         <Image
           src={service.image}
           alt={service.imageAlt}
