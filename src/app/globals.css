@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, system-ui, sans-serif;
+  --color-charcoal: #1C1C1E;
+  --color-surface: #2A2A2E;
+  --color-surface-light: #353539;
+  --color-orange: #FF6B2C;
+  --color-orange-hover: #FF8A50;
+}
+
+/* ── Base ──────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-sans), sans-serif;
+  background-color: #1C1C1E;
+  color: #FAFAFA;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Layout ───────────────────────────────────── */
+.section-wrap {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ── Trust Marquee ────────────────────────────── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  animation: marquee 30s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Review Marquee ───────────────────────────── */
+@keyframes reviewMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.review-marquee-track {
+  display: flex;
+  gap: 20px;
+  animation: reviewMarquee 40s linear infinite;
+}
+.review-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Gradient text ────────────────────────────── */
+.text-gradient-orange {
+  background: linear-gradient(135deg, #FF6B2C, #FF8A50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Input styles ─────────────────────────────── */
+.input-industrial {
+  width: 100%;
+  padding: 14px 18px;
+  background-color: #2A2A2E;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #FAFAFA;
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.input-industrial::placeholder {
+  color: #6B6B70;
+}
+.input-industrial:focus {
+  border-color: #FF6B2C;
+  box-shadow: 0 0 0 3px rgba(255, 107, 44, 0.25);
+  outline: none;
+}
+
+/* ── Button styles ────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background-color: #FF6B2C;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(255, 107, 44, 0.25);
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: #FF8A50;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 107, 44, 0.35);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background-color: transparent;
+  color: #FAFAFA;
+  font-weight: 500;
+  font-size: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.btn-ghost:hover {
+  background-color: #2A2A2E;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Mobile Bottom Dock ───────────────────────── */
+.mobile-dock {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-dock {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background-color: rgba(28, 28, 30, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+    gap: 8px;
+  }
+  body { padding-bottom: 80px; }
+  .desktop-only { display: none !important; }
+}
+@media (min-width: 769px) {
+  .mobile-only { display: none !important; }
+}
+
+/* ── Desktop nav visibility ───────────────────── */
+@media (max-width: 900px) {
+  .nav-desktop { display: none !important; }
+  .nav-mobile-toggle { display: flex !important; }
+}
+@media (min-width: 901px) {
+  .nav-mobile-toggle { display: none !important; }
+}
+
+/* ── Animations ───────────────────────────────── */
+@keyframes pulse-orange {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 44, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(255, 107, 44, 0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-enter {
+  animation: fadeInUp 0.5s ease-out;
+}

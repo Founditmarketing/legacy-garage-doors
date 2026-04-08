@@ -1,270 +1,134 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, ArrowRight, ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+"use client";
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { Menu, X, Phone, ArrowRight, ChevronDown } from "lucide-react";
 
-const serviceSubLinks = [
-  { name: 'New Installations', href: '/services/new-installations' },
-  { name: 'Preventive Maintenance', href: '/services/preventive-maintenance' },
-  { name: 'Expert Repairs', href: '/services/expert-repairs' },
-  { name: 'Diagnostic Service', href: '/services/diagnostic-service' },
-  { name: 'Spring Replacements', href: '/services/spring-replacements' },
-  { name: 'Rollers & Cables', href: '/services/rollers-and-cables' },
-  { name: 'Weather Seals', href: '/services/weather-seals' },
-  { name: 'Operator Replacements', href: '/services/operator-replacements' },
+const serviceLinks = [
+  { name: "New Installations", href: "/services/new-installations" },
+  { name: "Preventive Maintenance", href: "/services/preventive-maintenance" },
+  { name: "Expert Repairs", href: "/services/expert-repairs" },
+  { name: "Diagnostic Service", href: "/services/diagnostic-service" },
+  { name: "Spring Replacements", href: "/services/spring-replacements" },
+  { name: "Rollers & Cables", href: "/services/rollers-and-cables" },
+  { name: "Weather Seals", href: "/services/weather-seals" },
+  { name: "Operator Replacements", href: "/services/operator-replacements" },
 ];
 
 const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services', hasDropdown: true },
-  { name: 'Financing', href: '/financing' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/services", hasDropdown: true },
+  { name: "Financing", href: "/financing" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const loc = useLocation();
+  const dropdownTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 60);
-    window.addEventListener('scroll', fn, { passive: true });
-    return () => window.removeEventListener('scroll', fn);
+    const fn = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", fn, { passive: true });
+    return () => window.removeEventListener("scroll", fn);
   }, []);
+
   useEffect(() => {
     setMobileOpen(false);
     setDropdownOpen(false);
-  }, [loc.pathname]);
+  }, [pathname]);
 
-  const isHome = loc.pathname === '/';
+  const isHome = pathname === "/";
   const clear = isHome && !scrolled && !mobileOpen;
-
-  const openDropdown = () => {
-    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
-    setDropdownOpen(true);
-  };
-  const closeDropdown = () => {
-    dropdownTimeout.current = setTimeout(() => setDropdownOpen(false), 150);
-  };
 
   return (
     <>
       <header
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
         style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 100,
-          transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+          background: clear ? "transparent" : "rgba(28,28,30,0.92)",
+          backdropFilter: clear ? "none" : "blur(20px) saturate(180%)",
+          borderBottom: clear ? "none" : "1px solid rgba(255,255,255,0.06)",
         }}
       >
-        {/* Backdrop layer */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: clear
-              ? 'transparent'
-              : 'rgba(7,8,13,0.82)',
-            backdropFilter: clear ? 'none' : 'blur(24px) saturate(180%)',
-            borderBottom: clear
-              ? 'none'
-              : '1px solid rgba(255,255,255,0.06)',
-            transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-          }}
-        />
-
-        {/* Gradient accent line at bottom */}
-        {!clear && (
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              height: 1,
-              background: 'linear-gradient(90deg, transparent, rgba(62,106,225,0.2), transparent)',
-              opacity: scrolled ? 1 : 0,
-              transition: 'opacity 0.4s',
-            }}
-          />
-        )}
-
-        <div
-          style={{
-            position: 'relative',
-            zIndex: 1,
-            maxWidth: 1400,
-            margin: '0 auto',
-            padding: '0 28px',
-            height: 60,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
-        >
+        <div className="section-wrap flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
-            <img
+          <Link href="/" className="flex-shrink-0">
+            <Image
               src="/images/logo-shield.png"
               alt="Legacy Garage Doors"
-              style={{
-                height: 114,
-                width: 'auto',
-                objectFit: 'contain',
-                transition: 'filter 0.4s, opacity 0.4s',
-                filter: 'brightness(1.2)',
-                opacity: clear ? 1 : 0.9,
-              }}
+              width={120}
+              height={120}
+              className="h-20 w-auto object-contain"
+              style={{ filter: "brightness(1.2)" }}
+              priority
             />
           </Link>
 
-          {/* Center nav — desktop */}
-          <nav
-            className="lg-only"
-            style={{
-              position: 'absolute',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: 2,
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.06)',
-              borderRadius: 100,
-              padding: '3px 4px',
-              backdropFilter: 'blur(12px)',
-              transition: 'all 0.5s',
-            }}
-          >
+          {/* Desktop Nav */}
+          <nav className="nav-desktop flex items-center gap-1 bg-white/[0.04] border border-white/[0.06] rounded-full px-1 py-[3px] backdrop-blur-md">
             {navLinks.map((l) => {
-              const active = loc.pathname === l.href || (l.hasDropdown && loc.pathname.startsWith('/services'));
-              
+              const active = pathname === l.href || (l.hasDropdown && pathname.startsWith("/services"));
+
               if (l.hasDropdown) {
                 return (
                   <div
                     key={l.name}
-                    style={{ position: 'relative' }}
-                    onMouseEnter={openDropdown}
-                    onMouseLeave={closeDropdown}
+                    className="relative"
+                    onMouseEnter={() => {
+                      if (dropdownTimer.current) clearTimeout(dropdownTimer.current);
+                      setDropdownOpen(true);
+                    }}
+                    onMouseLeave={() => {
+                      dropdownTimer.current = setTimeout(() => setDropdownOpen(false), 150);
+                    }}
                   >
                     <Link
-                      to={l.href}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 4,
-                        padding: '7px 20px',
-                        fontSize: 13,
-                        fontWeight: 500,
-                        borderRadius: 100,
-                        color: active ? '#fff' : 'rgba(255,255,255,0.55)',
-                        background: active ? 'rgba(62,106,225,0.15)' : 'transparent',
-                        transition: 'all 0.3s',
-                        whiteSpace: 'nowrap',
-                        letterSpacing: '-0.01em',
-                      }}
+                      href={l.href}
+                      className={`flex items-center gap-1 px-5 py-[7px] text-[13px] font-medium rounded-full whitespace-nowrap transition-all duration-200 ${
+                        active
+                          ? "text-white bg-[var(--color-orange)]/15"
+                          : "text-white/55 hover:text-white hover:bg-white/[0.06]"
+                      }`}
                     >
                       {l.name}
                       <ChevronDown
                         size={11}
-                        style={{
-                          transition: 'transform 0.25s',
-                          transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0)',
-                          opacity: 0.5,
-                        }}
+                        className={`opacity-50 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
                       />
                     </Link>
 
                     {/* Dropdown */}
-                    <AnimatePresence>
-                      {dropdownOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 6, scale: 0.97 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 6, scale: 0.97 }}
-                          transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                          style={{
-                            position: 'absolute',
-                            top: 'calc(100% + 10px)',
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            width: 260,
-                            background: 'rgba(12,13,20,0.95)',
-                            backdropFilter: 'blur(24px) saturate(180%)',
-                            border: '1px solid rgba(255,255,255,0.08)',
-                            borderRadius: 14,
-                            padding: '8px',
-                            boxShadow: '0 16px 48px rgba(0,0,0,0.4), 0 0 1px rgba(255,255,255,0.05)',
-                          }}
+                    {dropdownOpen && (
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-[#1e1e22]/95 backdrop-blur-2xl border border-white/[0.08] rounded-2xl p-2 shadow-2xl"
+                        style={{ animation: "fadeInUp 0.2s ease-out" }}
+                      >
+                        <Link
+                          href="/services"
+                          className="block px-3 py-2.5 text-[13px] font-semibold text-[var(--color-orange)] rounded-lg hover:bg-[var(--color-orange)]/10 mb-1 border-b border-white/[0.04] pb-3"
                         >
-                          {/* Arrow */}
-                          <div style={{
-                            position: 'absolute',
-                            top: -5,
-                            left: '50%',
-                            transform: 'translateX(-50%) rotate(45deg)',
-                            width: 10,
-                            height: 10,
-                            background: 'rgba(12,13,20,0.95)',
-                            border: '1px solid rgba(255,255,255,0.08)',
-                            borderRight: 'none',
-                            borderBottom: 'none',
-                          }} />
-
+                          All Services →
+                        </Link>
+                        {serviceLinks.map((sub) => (
                           <Link
-                            to="/services"
-                            style={{
-                              display: 'block',
-                              padding: '10px 14px',
-                              fontSize: 13,
-                              fontWeight: 600,
-                              color: '#3E6AE1',
-                              borderRadius: 8,
-                              transition: 'background 0.2s',
-                              borderBottom: '1px solid rgba(255,255,255,0.04)',
-                              marginBottom: 4,
-                            }}
-                            onMouseEnter={e => (e.currentTarget.style.background = 'rgba(62,106,225,0.08)')}
-                            onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+                            key={sub.name}
+                            href={sub.href}
+                            className={`block px-3 py-2 text-[12.5px] rounded-lg transition-all duration-200 ${
+                              pathname === sub.href
+                                ? "text-white bg-white/[0.06]"
+                                : "text-white/55 hover:text-white hover:bg-white/[0.06]"
+                            }`}
                           >
-                            All Services →
+                            {sub.name}
                           </Link>
-
-                          {serviceSubLinks.map((sub) => (
-                            <Link
-                              key={sub.name}
-                              to={sub.href}
-                              style={{
-                                display: 'block',
-                                padding: '9px 14px',
-                                fontSize: 12.5,
-                                fontWeight: 400,
-                                color: loc.pathname === sub.href ? '#fff' : 'rgba(255,255,255,0.55)',
-                                borderRadius: 8,
-                                transition: 'all 0.2s',
-                                letterSpacing: '-0.01em',
-                              }}
-                              onMouseEnter={e => {
-                                e.currentTarget.style.background = 'rgba(255,255,255,0.06)';
-                                e.currentTarget.style.color = '#fff';
-                              }}
-                              onMouseLeave={e => {
-                                e.currentTarget.style.background = 'transparent';
-                                e.currentTarget.style.color = loc.pathname === sub.href ? '#fff' : 'rgba(255,255,255,0.55)';
-                              }}
-                            >
-                              {sub.name}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 );
               }
@@ -272,30 +136,12 @@ export default function Header() {
               return (
                 <Link
                   key={l.name}
-                  to={l.href}
-                  style={{
-                    padding: '7px 20px',
-                    fontSize: 13,
-                    fontWeight: 500,
-                    borderRadius: 100,
-                    color: active ? '#fff' : 'rgba(255,255,255,0.55)',
-                    background: active ? 'rgba(62,106,225,0.15)' : 'transparent',
-                    transition: 'all 0.3s',
-                    whiteSpace: 'nowrap',
-                    letterSpacing: '-0.01em',
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!active) {
-                      (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.06)';
-                      (e.currentTarget as HTMLElement).style.color = '#fff';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!active) {
-                      (e.currentTarget as HTMLElement).style.background = 'transparent';
-                      (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.55)';
-                    }
-                  }}
+                  href={l.href}
+                  className={`px-5 py-[7px] text-[13px] font-medium rounded-full whitespace-nowrap transition-all duration-200 ${
+                    active
+                      ? "text-white bg-[var(--color-orange)]/15"
+                      : "text-white/55 hover:text-white hover:bg-white/[0.06]"
+                  }`}
                 >
                   {l.name}
                 </Link>
@@ -303,275 +149,80 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Right — desktop */}
-          <div className="lg-only" style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+          {/* Desktop Right */}
+          <div className="nav-desktop flex items-center gap-3">
             <a
               href="tel:6019135975"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 6,
-                fontSize: 12,
-                fontWeight: 500,
-                color: 'rgba(255,255,255,0.45)',
-                transition: 'color 0.3s',
-                letterSpacing: '0.02em',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.color = '#fff';
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.45)';
-              }}
+              className="flex items-center gap-1.5 text-xs font-medium text-white/45 hover:text-white transition-colors"
             >
               <Phone size={11} /> 601-913-5975
             </a>
             <Link
-              to="/book-online"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 6,
-                height: 36,
-                padding: '0 20px',
-                fontSize: 12,
-                fontWeight: 500,
-                borderRadius: 100,
-                background: '#3E6AE1',
-                color: '#fff',
-                border: 'none',
-                transition: 'all 0.33s',
-                letterSpacing: '0.02em',
-                boxShadow: '0 0 20px rgba(62,106,225,0.25)',
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.background = '#4d78e8';
-                el.style.boxShadow = '0 0 30px rgba(62,106,225,0.4)';
-                el.style.transform = 'translateY(-1px)';
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.background = '#3E6AE1';
-                el.style.boxShadow = '0 0 20px rgba(62,106,225,0.25)';
-                el.style.transform = 'translateY(0)';
-              }}
+              href="/book-online"
+              className="btn-primary !py-2 !px-5 !text-[12px] !rounded-full"
             >
               Book Online <ArrowRight size={11} />
             </Link>
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobile Hamburger */}
           <button
-            className="lg-hide"
+            className="nav-mobile-toggle text-white p-1"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menu"
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              color: '#fff',
-              padding: 4,
-            }}
           >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </header>
 
-      {/* Mobile fullscreen drawer */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            style={{
-              position: 'fixed',
-              inset: 0,
-              zIndex: 99,
-              background: 'rgba(7,8,13,0.96)',
-              backdropFilter: 'blur(30px)',
-              paddingTop: 80,
-              paddingLeft: 28,
-              paddingRight: 28,
-              overflow: 'auto',
-            }}
-          >
-            <nav style={{ display: 'flex', flexDirection: 'column' }}>
-              {/* Home link */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0 }}
-              >
-                <Link
-                  to="/"
-                  onClick={() => setMobileOpen(false)}
-                  style={{
-                    display: 'block',
-                    padding: '20px 0',
-                    fontSize: 24,
-                    fontWeight: 500,
-                    color: '#fff',
-                    borderBottom: '1px solid rgba(255,255,255,0.06)',
-                    letterSpacing: '-0.02em',
-                  }}
-                >
-                  Home
-                </Link>
-              </motion.div>
+      {/* Mobile drawer */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-40 bg-[var(--color-charcoal)]/[0.97] backdrop-blur-3xl pt-20 px-6 overflow-auto">
+          <nav className="flex flex-col">
+            <Link href="/" onClick={() => setMobileOpen(false)} className="py-5 text-2xl font-medium text-white border-b border-white/[0.06]">
+              Home
+            </Link>
 
-              {/* Services with expandable sub-menu */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.04 }}
+            <div>
+              <div
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className="flex items-center justify-between py-5 text-2xl font-medium text-white border-b border-white/[0.06] cursor-pointer"
               >
-                <div
-                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '20px 0',
-                    fontSize: 24,
-                    fontWeight: 500,
-                    color: '#fff',
-                    borderBottom: '1px solid rgba(255,255,255,0.06)',
-                    letterSpacing: '-0.02em',
-                    cursor: 'pointer',
-                  }}
-                >
-                  Services
-                  <ChevronDown
-                    size={20}
-                    style={{
-                      transition: 'transform 0.3s',
-                      transform: mobileServicesOpen ? 'rotate(180deg)' : 'rotate(0)',
-                      opacity: 0.4,
-                    }}
-                  />
-                </div>
-                <AnimatePresence>
-                  {mobileServicesOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
-                      style={{ overflow: 'hidden' }}
-                    >
-                      <Link
-                        to="/services"
-                        onClick={() => setMobileOpen(false)}
-                        style={{
-                          display: 'block',
-                          padding: '14px 0 14px 16px',
-                          fontSize: 15,
-                          fontWeight: 600,
-                          color: '#3E6AE1',
-                          borderBottom: '1px solid rgba(255,255,255,0.03)',
-                        }}
-                      >
-                        All Services →
-                      </Link>
-                      {serviceSubLinks.map((sub) => (
-                        <Link
-                          key={sub.name}
-                          to={sub.href}
-                          onClick={() => setMobileOpen(false)}
-                          style={{
-                            display: 'block',
-                            padding: '12px 0 12px 16px',
-                            fontSize: 15,
-                            fontWeight: 400,
-                            color: 'rgba(255,255,255,0.55)',
-                            borderBottom: '1px solid rgba(255,255,255,0.03)',
-                          }}
-                        >
-                          {sub.name}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-
-              {/* Remaining links */}
-              {[
-                { name: 'Financing', href: '/financing' },
-                { name: 'About', href: '/about' },
-                { name: 'Contact', href: '/contact' },
-              ].map((l, i) => (
-                <motion.div
-                  key={l.name}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: (i + 2) * 0.04 }}
-                >
-                  <Link
-                    to={l.href}
-                    onClick={() => setMobileOpen(false)}
-                    style={{
-                      display: 'block',
-                      padding: '20px 0',
-                      fontSize: 24,
-                      fontWeight: 500,
-                      color: '#fff',
-                      borderBottom: '1px solid rgba(255,255,255,0.06)',
-                      letterSpacing: '-0.02em',
-                    }}
-                  >
-                    {l.name}
+                Services
+                <ChevronDown size={20} className={`opacity-40 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+              </div>
+              {mobileServicesOpen && (
+                <div className="py-2">
+                  <Link href="/services" onClick={() => setMobileOpen(false)} className="block pl-4 py-3 text-[15px] font-semibold text-[var(--color-orange)] border-b border-white/[0.03]">
+                    All Services →
                   </Link>
-                </motion.div>
-              ))}
-            </nav>
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.2 }}
-              style={{ marginTop: 32, display: 'flex', flexDirection: 'column', gap: 12 }}
-            >
-              <Link
-                to="/book-online"
-                onClick={() => setMobileOpen(false)}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 6,
-                  height: 52,
-                  background: '#3E6AE1',
-                  color: '#fff',
-                  borderRadius: 12,
-                  fontSize: 15,
-                  fontWeight: 500,
-                  boxShadow: '0 0 30px rgba(62,106,225,0.3)',
-                }}
-              >
-                Book Online <ArrowRight size={14} />
+                  {serviceLinks.map((s) => (
+                    <Link key={s.name} href={s.href} onClick={() => setMobileOpen(false)} className="block pl-4 py-3 text-[15px] text-white/55 border-b border-white/[0.03]">
+                      {s.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {["Financing", "About", "Contact"].map((n) => (
+              <Link key={n} href={`/${n.toLowerCase()}`} onClick={() => setMobileOpen(false)} className="py-5 text-2xl font-medium text-white border-b border-white/[0.06]">
+                {n}
               </Link>
-              <a
-                href="tel:6019135975"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 8,
-                  fontSize: 15,
-                  color: 'rgba(255,255,255,0.5)',
-                  padding: '14px 0',
-                }}
-              >
-                <Phone size={14} /> 601-913-5975
-              </a>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+          </nav>
+
+          <div className="mt-8 flex flex-col gap-3">
+            <Link href="/book-online" onClick={() => setMobileOpen(false)} className="btn-primary justify-center !rounded-xl h-14 text-base">
+              Book Online <ArrowRight size={16} />
+            </Link>
+            <a href="tel:6019135975" className="flex items-center justify-center gap-2 text-[15px] text-white/50 py-4">
+              <Phone size={14} /> 601-913-5975
+            </a>
+          </div>
+        </div>
+      )}
     </>
   );
 }
