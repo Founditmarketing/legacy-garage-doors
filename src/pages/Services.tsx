@@ -1,182 +1,213 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { 
-  Wrench, 
-  Shield, 
-  PenTool as Tool, 
-  Zap, 
-  Settings, 
-  Layers, 
-  Wind, 
-  Link as LinkIcon,
-  ArrowRight
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+
+/* ── Same custom SVG icons from ServiceOverview ────── */
+const GarageDoorIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="20" rx="2" stroke="currentColor" strokeWidth="1.5"/><line x1="4" y1="13" x2="28" y2="13" stroke="currentColor" strokeWidth="1.2"/><line x1="4" y1="18" x2="28" y2="18" stroke="currentColor" strokeWidth="1.2"/><line x1="4" y1="23" x2="28" y2="23" stroke="currentColor" strokeWidth="1.2"/><path d="M8 4h16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><rect x="22" y="19" width="2" height="3" rx="0.5" fill="currentColor"/></svg>
+);
+const MaintenanceIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="6" y="4" width="12" height="16" rx="1" stroke="currentColor" strokeWidth="1.5"/><path d="M9 9h6M9 12h4M9 15h5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/><circle cx="22" cy="22" r="6" stroke="currentColor" strokeWidth="1.5"/><path d="M22 19v3l2 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+);
+const RepairIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M10 22l12-12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M20 6l6 6-3 3-6-6 3-3z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/><path d="M6 26l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><circle cx="7" cy="25" r="2" stroke="currentColor" strokeWidth="1.2"/></svg>
+);
+const DiagnosticIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="14" cy="14" r="8" stroke="currentColor" strokeWidth="1.5"/><path d="M20 20l6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M11 14h6M14 11v6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+);
+const SpringIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 6c4 0 4 4 8 4s4-4 8-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M8 12c4 0 4 4 8 4s4-4 8-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M8 18c4 0 4 4 8 4s4-4 8-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M8 24c4 0 4 4 8 4s4-4 8-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+);
+const CableIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 4v24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M24 4v24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M8 10h16M8 16h16M8 22h16" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeDasharray="2 2"/><circle cx="8" cy="4" r="2" stroke="currentColor" strokeWidth="1.2"/><circle cx="24" cy="4" r="2" stroke="currentColor" strokeWidth="1.2"/></svg>
+);
+const WeatherIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 28V8a2 2 0 012-2h16a2 2 0 012 2v20" stroke="currentColor" strokeWidth="1.5"/><path d="M2 28h28" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><path d="M10 14s2-3 6-3 6 3 6 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/><path d="M12 20h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+);
+const OperatorIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="8" y="6" width="16" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M12 10h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/><path d="M16 16v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><circle cx="16" cy="24" r="3" stroke="currentColor" strokeWidth="1.5"/></svg>
+);
 
 const allServices = [
-  {
-    title: "New Garage Door Sales & Installation",
-    description: "Upgrade your home's curb appeal with top-tier brands and professional installation.",
-    icon: Shield,
-    image: "https://static.wixstatic.com/media/b65567_1f59b8e7a9f041f5a8bba6aa39ccd29c~mv2.png"
-  },
-  {
-    title: "Preventative Maintenance",
-    description: "Keep your system running smoothly and avoid costly emergency repairs with routine care.",
-    icon: Tool,
-    image: "https://static.wixstatic.com/media/b65567_65aca00ec35c437fa6e74a9185dd27b8~mv2.jpg"
-  },
-  {
-    title: "Repairs on Doors and Operators",
-    description: "From broken panels to malfunctioning motors, we fix all makes and models.",
-    icon: Wrench,
-    image: "https://static.wixstatic.com/media/b65567_274e3d117289493b9ab928955ca2cdef~mv2.png"
-  },
-  {
-    title: "Diagnostic Service Calls",
-    description: "Expert troubleshooting to identify the root cause of any garage door issue.",
-    icon: Zap,
-    image: "https://static.wixstatic.com/media/b65567_dcc336c418e9406a9772ba5b4b1de224~mv2.png"
-  },
-  {
-    title: "Spring Replacements",
-    description: "Safe and professional replacement of high-tension springs. $75 OFF PROMO AVAILABLE!",
-    icon: Layers,
-    image: "https://static.wixstatic.com/media/b65567_32345225d9e34090bc5d4e388955056f~mv2.png",
-    promo: true
-  },
-  {
-    title: "Rollers & Cables",
-    description: "Smooth out noisy operation and ensure safety with fresh rollers and heavy-duty cables.",
-    icon: LinkIcon,
-    image: "https://static.wixstatic.com/media/b65567_1ae0b94007f749a8a7f7065a850674c1~mv2.png"
-  },
-  {
-    title: "Weather Seals",
-    description: "Protect your garage from pests, dust, and drafts with professional weather stripping.",
-    icon: Wind,
-    image: "https://static.wixstatic.com/media/b65567_06fa02bc94a94643a19819f98ccbf682~mv2.png"
-  },
-  {
-    title: "Operator Replacements",
-    description: "Modern, quiet, and smart-connected garage door openers from LiftMaster and Chamberlain.",
-    icon: Settings,
-    image: "https://static.wixstatic.com/media/b65567_606cf941e067450e830ecda8194ab119~mv2.png"
-  }
+  { title: 'New Garage Door Sales & Installation', desc: 'Upgrade your home\'s curb appeal with premium brands — Clopay, Amarr, Chamberlain — and professional installation.', Icon: GarageDoorIcon, promo: false },
+  { title: 'Preventative Maintenance', desc: 'Keep your system running smoothly and avoid costly emergency repairs with routine care and inspection.', Icon: MaintenanceIcon, promo: false },
+  { title: 'Repairs on Doors & Operators', desc: 'Broken panels, malfunctioning motors, misaligned tracks — we repair all makes and models, same day.', Icon: RepairIcon, promo: false },
+  { title: 'Diagnostic Service Calls', desc: 'Expert troubleshooting that identifies the root cause before a single wrench turns.', Icon: DiagnosticIcon, promo: false },
+  { title: 'Spring Replacements', desc: 'Safe, professional replacement of high-tension springs. Currently $75 OFF — limited time.', Icon: SpringIcon, promo: true },
+  { title: 'Rollers & Cables', desc: 'Smooth out noisy operation and ensure safety with fresh nylon rollers and heavy-duty cables.', Icon: CableIcon, promo: false },
+  { title: 'Weather Seals', desc: 'Protect your garage from pests, dust, and drafts with professional weather stripping.', Icon: WeatherIcon, promo: false },
+  { title: 'Operator Replacements', desc: 'Modern, quiet, smart-connected openers from LiftMaster and Chamberlain.', Icon: OperatorIcon, promo: false },
 ];
 
 export default function Services() {
   return (
-    <div className="bg-slate-50">
-      {/* Page Header */}
-      <section className="bg-primary py-24 text-white relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-5xl md:text-6xl font-black mb-6">Our Services</h1>
-          <p className="text-xl text-blue-100 max-w-3xl leading-relaxed">
-            At Legacy Doors, we are committed to ensuring your garage door operates safely and efficiently — from preventative maintenance to full installations.
-          </p>
-        </div>
+    <div style={{ background: '#07080d' }}>
+      {/* Hero */}
+      <section className="page-hero">
+        <p style={{ position: 'relative', fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#3E6AE1', marginBottom: 20 }}>Our Services</p>
+        <h1>Expert Care for Every Door.</h1>
+        <p>From preventive maintenance to full custom installations — we ensure your garage door operates safely and efficiently.</p>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {allServices.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all group flex flex-col"
-              >
-                <div className="relative h-56 overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    referrerPolicy="no-referrer"
-                  />
-                  {service.promo && (
-                    <div className="absolute top-4 right-4 bg-accent text-white px-4 py-1 rounded-full font-bold text-sm shadow-lg animate-pulse">
-                      $75 OFF
-                    </div>
+      {/* Grid */}
+      <section style={{ padding: '100px 0' }}>
+        <div className="section-wrap">
+          <div style={{
+            display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+            gap: 16,
+          }}>
+            {allServices.map((s, i) => {
+              const Icon = s.Icon;
+              return (
+                <motion.div key={s.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.4, delay: (i % 3) * 0.05 }}
+                  style={{
+                    background: 'rgba(255,255,255,0.02)',
+                    backdropFilter: 'blur(12px)',
+                    border: '1px solid rgba(255,255,255,0.05)',
+                    borderRadius: 16,
+                    padding: '36px 32px',
+                    transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                    position: 'relative',
+                    overflow: 'hidden',
+                  }}
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.background = 'rgba(255,255,255,0.05)';
+                    el.style.borderColor = 'rgba(62,106,225,0.2)';
+                    el.style.boxShadow = '0 0 40px rgba(62,106,225,0.1), 0 8px 32px rgba(0,0,0,0.3)';
+                    el.style.transform = 'translateY(-4px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.background = 'rgba(255,255,255,0.02)';
+                    el.style.borderColor = 'rgba(255,255,255,0.05)';
+                    el.style.boxShadow = 'none';
+                    el.style.transform = 'translateY(0)';
+                  }}
+                >
+                  {/* Top gradient */}
+                  <div style={{
+                    position: 'absolute', top: 0, left: 0, right: 0, height: 1,
+                    background: 'linear-gradient(90deg, transparent, rgba(62,106,225,0.2), transparent)',
+                  }} />
+
+                  {/* Promo badge */}
+                  {s.promo && (
+                    <span style={{
+                      position: 'absolute', top: 16, right: 16,
+                      background: 'linear-gradient(135deg, #3E6AE1, #818cf8)',
+                      color: '#fff', fontSize: 11,
+                      fontWeight: 600, padding: '4px 12px', borderRadius: 100,
+                      boxShadow: '0 4px 15px rgba(62,106,225,0.3)',
+                    }}>$75 OFF</span>
                   )}
-                  <div className="absolute bottom-4 left-4">
-                    <div className="bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-lg">
-                      <service.icon className="w-6 h-6 text-primary" />
-                    </div>
+
+                  {/* Icon */}
+                  <div style={{
+                    width: 56, height: 56, borderRadius: 14,
+                    background: 'rgba(62,106,225,0.08)',
+                    border: '1px solid rgba(62,106,225,0.12)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    marginBottom: 24,
+                    color: '#3E6AE1',
+                  }}>
+                    <Icon />
                   </div>
-                </div>
-                <div className="p-8 flex-grow flex flex-col">
-                  <h3 className="text-2xl font-bold mb-4 leading-tight">{service.title}</h3>
-                  <p className="text-slate-600 mb-8 flex-grow">
-                    {service.description}
+
+                  <h3 style={{ fontSize: 18, fontWeight: 600, color: '#f0f2f5', marginBottom: 10, letterSpacing: '-0.01em' }}>
+                    {s.title}
+                  </h3>
+                  <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.4)', lineHeight: 1.7, marginBottom: 24, fontWeight: 300 }}>
+                    {s.desc}
                   </p>
-                  <Link 
-                    to="/book-online" 
-                    className="bg-slate-100 hover:bg-primary hover:text-white text-primary px-6 py-3 rounded-xl font-bold text-center transition-all flex items-center justify-center gap-2"
-                  >
-                    Book Now
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+                  <Link to="/book-online" style={{
+                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 6,
+                    height: 38, padding: '0 20px', fontSize: 13, fontWeight: 500,
+                    background: 'rgba(62,106,225,0.1)',
+                    border: '1px solid rgba(62,106,225,0.2)',
+                    color: '#3E6AE1', borderRadius: 8,
+                    transition: 'all 0.33s',
+                  }}
+                  onMouseEnter={e => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.background = '#3E6AE1';
+                    el.style.color = '#fff';
+                    el.style.borderColor = '#3E6AE1';
+                  }}
+                  onMouseLeave={e => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.background = 'rgba(62,106,225,0.1)';
+                    el.style.color = '#3E6AE1';
+                    el.style.borderColor = 'rgba(62,106,225,0.2)';
+                  }}
+                  >Book Now <ArrowRight size={12} /></Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Quote Form */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-slate-900 rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row">
-            <div className="md:w-1/3 bg-primary p-12 text-white flex flex-col justify-center">
-              <h2 className="text-3xl font-black mb-6">Get a Free Quote</h2>
-              <p className="text-blue-100 mb-8">
-                Tell us about your project and we'll get back to you with a professional estimate.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                    <Shield className="w-5 h-5" />
-                  </div>
-                  <span className="font-bold">No Obligation</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                    <Zap className="w-5 h-5" />
-                  </div>
-                  <span className="font-bold">Fast Response</span>
-                </div>
+      <section style={{ padding: '100px 0', background: '#0c0d14', position: 'relative' }}>
+        <div style={{
+          position: 'absolute', top: 0, left: 0, right: 0, height: 1,
+          background: 'linear-gradient(90deg, transparent, rgba(62,106,225,0.2), transparent)',
+        }} />
+        <div className="section-wrap" style={{ maxWidth: 720 }}>
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#3E6AE1', marginBottom: 16 }}>Free Estimate</p>
+            <h2 style={{ fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 500, color: '#f0f2f5', letterSpacing: '-0.02em' }}>Get a free quote today.</h2>
+          </div>
+          <div style={{
+            background: 'rgba(255,255,255,0.02)',
+            backdropFilter: 'blur(16px)',
+            border: '1px solid rgba(255,255,255,0.06)',
+            borderRadius: 20,
+            padding: 'clamp(32px, 5vw, 48px)',
+          }}>
+            <form onSubmit={e => e.preventDefault()} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+              <div>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.3)', marginBottom: 8, letterSpacing: '0.06em', textTransform: 'uppercase' }}>First Name</label>
+                <input className="lgd-input-dark" placeholder="John" />
               </div>
-            </div>
-            <div className="md:w-2/3 p-12">
-              <form className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-400 uppercase tracking-wider">First Name</label>
-                  <input type="text" className="w-full bg-slate-800 border-none rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-primary outline-none" placeholder="John" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-400 uppercase tracking-wider">Last Name</label>
-                  <input type="text" className="w-full bg-slate-800 border-none rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-primary outline-none" placeholder="Doe" />
-                </div>
-                <div className="sm:col-span-2 space-y-2">
-                  <label className="text-sm font-bold text-slate-400 uppercase tracking-wider">Email Address</label>
-                  <input type="email" className="w-full bg-slate-800 border-none rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-primary outline-none" placeholder="john@example.com" />
-                </div>
-                <div className="sm:col-span-2 space-y-2">
-                  <label className="text-sm font-bold text-slate-400 uppercase tracking-wider">Message</label>
-                  <textarea rows={4} className="w-full bg-slate-800 border-none rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-primary outline-none resize-none" placeholder="How can we help?"></textarea>
-                </div>
-                <div className="sm:col-span-2">
-                  <button className="w-full bg-accent hover:bg-orange-600 text-white py-4 rounded-xl font-black text-lg transition-all shadow-lg shadow-orange-900/20">
-                    Send Request
-                  </button>
-                </div>
-              </form>
-            </div>
+              <div>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.3)', marginBottom: 8, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Last Name</label>
+                <input className="lgd-input-dark" placeholder="Doe" />
+              </div>
+              <div style={{ gridColumn: 'span 2' }}>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.3)', marginBottom: 8, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Email</label>
+                <input className="lgd-input-dark" type="email" placeholder="john@example.com" />
+              </div>
+              <div style={{ gridColumn: 'span 2' }}>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.3)', marginBottom: 8, letterSpacing: '0.06em', textTransform: 'uppercase' }}>How can we help?</label>
+                <textarea className="lgd-input-dark" placeholder="Describe your project or issue..." />
+              </div>
+              <div style={{ gridColumn: 'span 2' }}>
+                <button type="submit" style={{
+                  width: '100%', height: 48, background: '#3E6AE1', color: '#fff',
+                  fontSize: 15, fontWeight: 500, borderRadius: 10, border: 'none',
+                  cursor: 'pointer', transition: 'all 0.33s',
+                  boxShadow: '0 0 25px rgba(62,106,225,0.25)',
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.boxShadow = '0 0 40px rgba(62,106,225,0.4)';
+                  el.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.boxShadow = '0 0 25px rgba(62,106,225,0.25)';
+                  el.style.transform = 'translateY(0)';
+                }}
+                >Send Request</button>
+              </div>
+            </form>
           </div>
         </div>
       </section>

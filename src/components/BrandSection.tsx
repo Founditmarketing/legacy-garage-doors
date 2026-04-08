@@ -1,37 +1,95 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 
 const brands = [
-  { name: 'Chamberlain', image: 'https://static.wixstatic.com/media/b65567_db2ec489655448e3a5538cd41109967a~mv2.png' },
-  { name: 'LiftMaster', image: 'https://static.wixstatic.com/media/b65567_c38c3baf6f6e4ca2acfad0017691ac9b~mv2.png' },
-  { name: 'Clopay', image: 'https://static.wixstatic.com/media/b65567_b39a2e54fcf247f59a4514dd02608698~mv2.png' },
-  { name: 'Amarr', image: 'https://static.wixstatic.com/media/b65567_da75e81b714a4bbb9e94898d411d65e4~mv2.png' },
+  {
+    name: 'LiftMaster',
+    image: 'https://static.wixstatic.com/media/b65567_c38c3baf6f6e4ca2acfad0017691ac9b~mv2.png',
+  },
+  {
+    name: 'Clopay',
+    image: 'https://static.wixstatic.com/media/b65567_b39a2e54fcf247f59a4514dd02608698~mv2.png',
+  },
+  {
+    name: 'Chamberlain',
+    image: 'https://static.wixstatic.com/media/b65567_db2ec489655448e3a5538cd41109967a~mv2.png',
+  },
+  {
+    name: 'Amarr',
+    image: 'https://static.wixstatic.com/media/b65567_da75e81b714a4bbb9e94898d411d65e4~mv2.png',
+  },
 ];
 
 export default function BrandSection() {
+  const [hovered, setHovered] = useState<number | null>(null);
+
   return (
-    <section className="py-16 bg-[#F4F4F4]">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <div className="text-center mb-8">
-          <p className="text-[13px] font-medium text-[#5C5E62] tracking-widest uppercase">Trusted Partners</p>
-        </div>
-        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-          {brands.map((brand, index) => (
+    <section style={{ padding: '48px 0', background: '#f7f8fc', position: 'relative' }}>
+      {/* Top gradient line */}
+      <div style={{
+        position: 'absolute', top: 0, left: 0, right: 0, height: 1,
+        background: 'linear-gradient(90deg, transparent, rgba(62,106,225,0.15), transparent)',
+      }} />
+
+      <div className="section-wrap" style={{ textAlign: 'center' }}>
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          style={{
+            fontSize: 11,
+            fontWeight: 600,
+            letterSpacing: '0.14em',
+            textTransform: 'uppercase',
+            color: '#3E6AE1',
+            marginBottom: 32,
+          }}
+        >
+          Authorized Partners
+        </motion.p>
+
+        {/* Horizontal logo strip — NOT tall cards */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 'clamp(24px, 4vw, 56px)',
+            flexWrap: 'wrap',
+          }}
+        >
+          {brands.map((b, i) => (
             <motion.div
-              key={brand.name}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              key={b.name}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered(null)}
+              style={{
+                padding: '20px 28px',
+                cursor: 'default',
+                transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                transform: hovered === i ? 'translateY(-2px)' : 'translateY(0)',
+                background: '#fff',
+                borderRadius: 14,
+                boxShadow: hovered === i
+                  ? '0 8px 30px rgba(50,50,93,0.12), 0 3px 8px rgba(0,0,0,0.08)'
+                  : '0 2px 10px rgba(50,50,93,0.06), 0 1px 3px rgba(0,0,0,0.04)',
+              }}
             >
-              <img 
-                src={brand.image} 
-                alt={brand.name} 
-                className="h-24 md:h-32 object-contain mix-blend-multiply contrast-[2] brightness-[1.1] grayscale opacity-70 hover:opacity-100 transition-all duration-300"
+              <img
+                src={b.image}
+                alt={b.name}
                 referrerPolicy="no-referrer"
-                onError={(e) => {
-                  // Fallback if logo fails to load
-                  (e.target as HTMLImageElement).src = `https://via.placeholder.com/150x50?text=${brand.name}`;
+                style={{
+                  width: 'clamp(100px, 12vw, 160px)',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  opacity: hovered === null || hovered === i ? 1 : 0.5,
+                  transition: 'opacity 0.4s',
                 }}
               />
             </motion.div>

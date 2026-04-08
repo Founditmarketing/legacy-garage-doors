@@ -1,136 +1,215 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Phone, Mail, Clock, MapPin, Facebook } from 'lucide-react';
+import { Phone, Mail, Clock, MapPin, Facebook, CheckCircle2 } from 'lucide-react';
 
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false);
+
   return (
-    <div className="bg-white">
-      {/* Page Header */}
-      <section className="bg-slate-900 py-24 text-white relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-5xl md:text-6xl font-black mb-6">Contact Us</h1>
-          <p className="text-xl text-slate-300 max-w-2xl">
-            We're here to help with all your garage door needs. Reach out to us anytime.
-          </p>
-        </div>
+    <div style={{ background: '#07080d' }}>
+      {/* Hero */}
+      <section className="page-hero">
+        <p style={{ position: 'relative', fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#3E6AE1', marginBottom: 20 }}>Contact</p>
+        <h1>Let's Talk.</h1>
+        <p>Questions, emergencies, or free estimates — we're here for you, 24/7.</p>
       </section>
 
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Contact Info */}
-            <div>
-              <h2 className="text-4xl font-black mb-8">Get in <span className="text-primary">Touch</span></h2>
-              <p className="text-lg text-slate-600 mb-12 leading-relaxed">
-                Whether you have a question about our services, need an emergency repair, or want to schedule a free estimate, our team is ready to assist you.
+      {/* Content */}
+      <section style={{ padding: '100px 0', background: '#0c0d14', position: 'relative' }}>
+        <div style={{
+          position: 'absolute', top: 0, left: 0, right: 0, height: 1,
+          background: 'linear-gradient(90deg, transparent, rgba(62,106,225,0.2), transparent)',
+        }} />
+        <div className="section-wrap">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: 64 }}>
+            {/* Info */}
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+              <div style={{ width: 48, height: 2, background: 'linear-gradient(90deg, #3E6AE1, transparent)', marginBottom: 20 }} />
+              <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#3E6AE1', marginBottom: 16 }}>Get in Touch</p>
+              <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 500, color: '#f0f2f5', marginBottom: 24, letterSpacing: '-0.03em', lineHeight: 1.12 }}>
+                We'd love to{' '}
+                <span style={{
+                  background: 'linear-gradient(135deg, #3E6AE1, #818cf8)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}>hear from you</span>.
+              </h2>
+              <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.45)', lineHeight: 1.75, marginBottom: 40, fontWeight: 300 }}>
+                Whether you need an emergency repair at midnight or want to schedule a free estimate for a new installation, our team is ready to help.
               </p>
 
-              <div className="space-y-8">
-                <div className="flex items-start gap-6">
-                  <div className="bg-blue-50 p-4 rounded-2xl text-primary">
-                    <Phone className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-1">Phone</h4>
-                    <p className="text-slate-600 mb-1">Main: <a href="tel:601-913-5975" className="font-bold text-slate-900 hover:text-primary transition-colors">601-913-5975</a></p>
-                    <p className="text-slate-600">Alt: <a href="tel:601-436-7907" className="font-bold text-slate-900 hover:text-primary transition-colors">601-436-7907</a></p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-6">
-                  <div className="bg-orange-50 p-4 rounded-2xl text-accent">
-                    <Mail className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-1">Email</h4>
-                    <p className="text-slate-600 mb-1"><a href="mailto:seth@legacydoorsales.com" className="font-bold text-slate-900 hover:text-primary transition-colors">seth@legacydoorsales.com</a></p>
-                    <p className="text-slate-600"><a href="mailto:jessica@legacydoorsales.com" className="font-bold text-slate-900 hover:text-primary transition-colors">jessica@legacydoorsales.com</a></p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-6">
-                  <div className="bg-green-50 p-4 rounded-2xl text-green-600">
-                    <Clock className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-1">Business Hours</h4>
-                    <p className="text-slate-600 font-bold">Open 24/7 for Emergency Services</p>
-                    <p className="text-slate-600">Standard Hours: Mon-Fri, 8am - 5pm</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-6">
-                  <div className="bg-purple-50 p-4 rounded-2xl text-purple-600">
-                    <MapPin className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-1">Service Area</h4>
-                    <p className="text-slate-600">Proudly serving Hattiesburg, MS and all of Southern Mississippi.</p>
-                  </div>
-                </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                {[
+                  { icon: Phone, label: 'Phone', lines: [
+                    { text: '601-913-5975', href: 'tel:6019135975' },
+                    { text: '601-436-7907', href: 'tel:6014367907' },
+                  ]},
+                  { icon: Mail, label: 'Email', lines: [
+                    { text: 'seth@legacydoorsales.com', href: 'mailto:seth@legacydoorsales.com' },
+                    { text: 'jessica@legacydoorsales.com', href: 'mailto:jessica@legacydoorsales.com' },
+                  ]},
+                  { icon: Clock, label: 'Hours', lines: [
+                    { text: 'Open 24/7 for Emergencies' },
+                    { text: 'Standard: Mon–Fri 8am–5pm' },
+                  ]},
+                  { icon: MapPin, label: 'Area', lines: [
+                    { text: 'Hattiesburg & all of Southern MS' },
+                  ]},
+                ].map(c => {
+                  const Icon = c.icon;
+                  return (
+                    <div key={c.label} style={{
+                      display: 'flex', gap: 16, alignItems: 'flex-start',
+                      background: 'rgba(255,255,255,0.02)',
+                      border: '1px solid rgba(255,255,255,0.05)',
+                      borderRadius: 14,
+                      padding: '18px 20px',
+                      transition: 'all 0.3s',
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.borderColor = 'rgba(62,106,225,0.15)';
+                      (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.04)';
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.05)';
+                      (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.02)';
+                    }}
+                    >
+                      <div style={{
+                        width: 42, height: 42, borderRadius: 12,
+                        background: 'rgba(62,106,225,0.1)',
+                        border: '1px solid rgba(62,106,225,0.15)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                      }}>
+                        <Icon size={16} strokeWidth={1.5} style={{ color: '#3E6AE1' }} />
+                      </div>
+                      <div>
+                        <div style={{ fontSize: 13, fontWeight: 600, color: '#f0f2f5', marginBottom: 4 }}>{c.label}</div>
+                        {c.lines.map((l, i) => (
+                          l.href ? (
+                            <a key={i} href={l.href} style={{ display: 'block', fontSize: 14, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, transition: 'color 0.25s', fontWeight: 300 }}
+                              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#3E6AE1'; }}
+                              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.45)'; }}
+                            >{l.text}</a>
+                          ) : <div key={i} style={{ fontSize: 14, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, fontWeight: 300 }}>{l.text}</div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
 
-              <div className="mt-12 flex gap-4">
-                <a href="https://facebook.com" className="bg-slate-100 p-4 rounded-2xl text-slate-600 hover:bg-primary hover:text-white transition-all">
-                  <Facebook className="w-6 h-6" />
-                </a>
+              <div style={{ marginTop: 24 }}>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{
+                  display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                  width: 42, height: 42, borderRadius: 12,
+                  border: '1px solid rgba(255,255,255,0.06)',
+                  background: 'rgba(255,255,255,0.03)',
+                  color: 'rgba(255,255,255,0.4)',
+                  transition: 'all 0.3s',
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = 'rgba(62,106,225,0.3)';
+                  el.style.color = '#3E6AE1';
+                  el.style.boxShadow = '0 0 20px rgba(62,106,225,0.15)';
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = 'rgba(255,255,255,0.06)';
+                  el.style.color = 'rgba(255,255,255,0.4)';
+                  el.style.boxShadow = 'none';
+                }}
+                ><Facebook size={16} /></a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Form */}
-            <div className="bg-slate-50 p-12 rounded-[3rem] border border-slate-100 shadow-xl">
-              <h3 className="text-2xl font-bold mb-8">Send us a Message</h3>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">First Name</label>
-                    <input type="text" className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="John" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">Last Name</label>
-                    <input type="text" className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Doe" />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">Email Address</label>
-                  <input type="email" className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="john@example.com" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">Phone Number</label>
-                  <input type="tel" className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="(601) 000-0000" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-500 uppercase tracking-wider">Message</label>
-                  <textarea rows={5} className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary outline-none transition-all resize-none" placeholder="How can we help?"></textarea>
-                </div>
-                <button className="w-full bg-primary hover:bg-blue-800 text-white py-4 rounded-xl font-black text-lg transition-all shadow-lg shadow-primary/20">
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+              <div style={{
+                background: 'rgba(255,255,255,0.02)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255,255,255,0.06)',
+                padding: 'clamp(32px, 4vw, 48px)',
+                borderRadius: 20,
+                position: 'relative',
+                overflow: 'hidden',
+              }}>
+                <div style={{
+                  position: 'absolute', top: 0, left: 0, right: 0, height: 2,
+                  background: 'linear-gradient(90deg, #3E6AE1, #818cf8, #3E6AE1)',
+                }} />
 
-      {/* Map Placeholder */}
-      <section className="h-[500px] bg-slate-200 relative overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-2">Service Area Map</h3>
-            <p className="text-slate-600">Centred on Hattiesburg, MS</p>
-            <div className="mt-8 bg-white p-6 rounded-2xl shadow-xl inline-block">
-              <p className="font-bold text-primary">Serving all of Southern Mississippi</p>
-            </div>
+                {submitted ? (
+                  <div style={{ textAlign: 'center', padding: '40px 0' }}>
+                    <div style={{
+                      width: 64, height: 64, borderRadius: '50%',
+                      background: 'rgba(62,106,225,0.1)',
+                      border: '1px solid rgba(62,106,225,0.2)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      margin: '0 auto 24px',
+                    }}>
+                      <CheckCircle2 size={28} strokeWidth={1.5} style={{ color: '#3E6AE1' }} />
+                    </div>
+                    <h3 style={{ fontSize: 22, fontWeight: 600, color: '#f0f2f5', marginBottom: 8 }}>Message Sent</h3>
+                    <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.45)', marginBottom: 24, fontWeight: 300 }}>We'll get back to you within one business day.</p>
+                    <button onClick={() => setSubmitted(false)} style={{
+                      height: 44, padding: '0 28px', background: '#3E6AE1', color: '#fff',
+                      fontSize: 14, fontWeight: 500, borderRadius: 10, border: 'none', cursor: 'pointer',
+                      boxShadow: '0 0 20px rgba(62,106,225,0.25)',
+                    }}>Send Another</button>
+                  </div>
+                ) : (
+                  <>
+                    <h3 style={{ fontSize: 20, fontWeight: 600, color: '#f0f2f5', marginBottom: 28, letterSpacing: '-0.02em' }}>Send us a message</h3>
+                    <form onSubmit={e => { e.preventDefault(); setSubmitted(true); }} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                        <div>
+                          <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.3)', marginBottom: 8, letterSpacing: '0.06em', textTransform: 'uppercase' }}>First Name</label>
+                          <input className="lgd-input-dark" placeholder="John" required />
+                        </div>
+                        <div>
+                          <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.3)', marginBottom: 8, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Last Name</label>
+                          <input className="lgd-input-dark" placeholder="Doe" required />
+                        </div>
+                      </div>
+                      <div>
+                        <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.3)', marginBottom: 8, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Email</label>
+                        <input className="lgd-input-dark" type="email" placeholder="john@example.com" required />
+                      </div>
+                      <div>
+                        <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.3)', marginBottom: 8, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Phone</label>
+                        <input className="lgd-input-dark" type="tel" placeholder="(601) 000-0000" />
+                      </div>
+                      <div>
+                        <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.3)', marginBottom: 8, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Message</label>
+                        <textarea className="lgd-input-dark" placeholder="How can we help?" required />
+                      </div>
+                      <button type="submit" style={{
+                        width: '100%', height: 48, background: '#3E6AE1', color: '#fff',
+                        fontSize: 15, fontWeight: 500, borderRadius: 10, border: 'none',
+                        cursor: 'pointer', transition: 'all 0.33s',
+                        boxShadow: '0 0 25px rgba(62,106,225,0.25)',
+                      }}
+                      onMouseEnter={e => {
+                        const el = e.currentTarget as HTMLElement;
+                        el.style.boxShadow = '0 0 40px rgba(62,106,225,0.4)';
+                        el.style.transform = 'translateY(-2px)';
+                      }}
+                      onMouseLeave={e => {
+                        const el = e.currentTarget as HTMLElement;
+                        el.style.boxShadow = '0 0 25px rgba(62,106,225,0.25)';
+                        el.style.transform = 'translateY(0)';
+                      }}
+                      >Send Message</button>
+                    </form>
+                  </>
+                )}
+              </div>
+            </motion.div>
           </div>
         </div>
-        {/* In a real app, embed Google Maps here */}
-        <img 
-          src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=1920" 
-          alt="Map Background" 
-          className="w-full h-full object-cover opacity-30 grayscale"
-          referrerPolicy="no-referrer"
-        />
       </section>
     </div>
   );

@@ -2,26 +2,24 @@ import React from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import { motion, AnimatePresence } from 'motion/react';
+import { useEffect } from 'react';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 
 export default function Layout() {
-  const location = useLocation();
+  const loc = useLocation();
+  const isHome = loc.pathname === '/';
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <ScrollToTop />
       <Header />
-      <main className={`flex-grow${location.pathname !== '/' ? ' pt-36' : ''}`}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={location.pathname}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Outlet />
-          </motion.div>
-        </AnimatePresence>
+      <main style={{ flexGrow: 1, paddingTop: isHome ? 0 : 0 }}>
+        <Outlet />
       </main>
       <Footer />
     </div>
