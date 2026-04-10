@@ -19,6 +19,7 @@ const serviceLinks = [
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services", hasDropdown: true },
+  { name: "Service Areas", href: "/service-areas" },
   { name: "Financing", href: "/financing" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
@@ -152,10 +153,10 @@ export default function Header() {
           {/* Desktop Right */}
           <div className="nav-desktop flex items-center gap-3">
             <a
-              href="tel:6019135975"
+              href="tel:6014367907"
               className="flex items-center gap-1.5 text-xs font-medium text-white/45 hover:text-white transition-colors"
             >
-              <Phone size={11} /> 601-913-5975
+              <Phone size={11} /> (601) 436-7907
             </a>
             <Link
               href="/book-online"
@@ -206,8 +207,8 @@ export default function Header() {
               )}
             </div>
 
-            {["Financing", "About", "Contact"].map((n) => (
-              <Link key={n} href={`/${n.toLowerCase()}`} onClick={() => setMobileOpen(false)} className="py-5 text-2xl font-medium text-white border-b border-white/[0.06]">
+            {["Service Areas", "Financing", "About", "Contact"].map((n) => (
+              <Link key={n} href={`/${n.toLowerCase().replace(" ", "-")}`} onClick={() => setMobileOpen(false)} className="py-5 text-2xl font-medium text-white border-b border-white/[0.06]">
                 {n}
               </Link>
             ))}
@@ -217,8 +218,8 @@ export default function Header() {
             <Link href="/book-online" onClick={() => setMobileOpen(false)} className="btn-primary justify-center !rounded-xl h-14 text-base">
               Book Online <ArrowRight size={16} />
             </Link>
-            <a href="tel:6019135975" className="flex items-center justify-center gap-2 text-[15px] text-white/50 py-4">
-              <Phone size={14} /> 601-913-5975
+            <a href="tel:6014367907" className="flex items-center justify-center gap-2 text-[15px] text-white/50 py-4">
+              <Phone size={14} /> (601) 436-7907
             </a>
           </div>
         </div>

@@ -51,7 +51,7 @@ export default function MultiStepForm() {
         <h3 className="text-2xl font-semibold text-white mb-3">Request Received!</h3>
         <p className="text-white/50 text-[15px] max-w-md mx-auto">
           We&apos;ll reach out within 30 minutes during business hours. For emergencies, call{" "}
-          <a href="tel:6019135975" className="text-[var(--color-brand)] font-medium">601-913-5975</a> now.
+          <a href="tel:6014367907" className="text-[var(--color-brand)] font-medium">(601) 436-7907</a> now.
         </p>
       </div>
     );
@@ -123,7 +123,7 @@ export default function MultiStepForm() {
                 className="input-industrial text-2xl tracking-widest text-center max-w-[200px]"
                 autoFocus
               />
-              <p className="text-xs text-white/20 mt-4">Serving Hattiesburg, Petal, Purvis, Laurel, and surrounding areas.</p>
+              <p className="text-xs text-white/20 mt-4">Serving 44+ cities across Southern Mississippi. <a href="/service-areas" className="text-[var(--color-brand)] hover:underline">View all service areas</a></p>
             </div>
           )}
 

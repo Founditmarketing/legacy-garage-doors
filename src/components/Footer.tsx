@@ -13,6 +13,7 @@ const serviceLinks = [
 
 const companyLinks = [
   { name: "About", href: "/about" },
+  { name: "Service Areas", href: "/service-areas" },
   { name: "Financing", href: "/financing" },
   { name: "Contact", href: "/contact" },
   { name: "Book Online", href: "/book-online" },
@@ -94,13 +95,13 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-white/40 font-light">
                 <Phone size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-brand)]" />
-                <a href="tel:6019135975" className="hover:text-white transition-colors">
-                  601-913-5975
+                <a href="tel:6014367907" className="hover:text-white transition-colors">
+                  (601) 436-7907
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-white/40 font-light">
                 <Mail size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-brand)]" />
-                <span>legacygaragedoorsllc@gmail.com</span>
+                <a href="mailto:seth@legacydoorsales.com" className="hover:text-white transition-colors">seth@legacydoorsales.com</a>
               </li>
               <li className="flex items-start gap-3 text-sm text-white/40 font-light">
                 <MapPin size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-brand)]" />

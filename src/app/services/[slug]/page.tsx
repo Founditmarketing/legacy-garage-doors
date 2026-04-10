@@ -133,7 +133,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
     provider: {
       "@type": "LocalBusiness",
       name: "Legacy Garage Doors",
-      telephone: "601-913-5975",
+      telephone: "(601) 436-7907",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Hattiesburg",
@@ -197,8 +197,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <Link href="/book-online" className="btn-primary">
               Schedule This Service <ArrowRight size={16} />
             </Link>
-            <a href="tel:6019135975" className="btn-ghost">
-              <Phone size={16} /> 601-913-5975
+            <a href="tel:6014367907" className="btn-ghost">
+              <Phone size={16} /> (601) 436-7907
             </a>
           </div>
         </div>

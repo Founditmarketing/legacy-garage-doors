@@ -25,7 +25,7 @@ export default function BookOnlinePage() {
             <MultiStepForm />
           </div>
           <p className="text-center text-xs text-white/20 mt-6">
-            Prefer to call? <a href="tel:6019135975" className="text-[var(--color-brand)] hover:underline">601-913-5975</a> — available 24/7.
+            Prefer to call? <a href="tel:6014367907" className="text-[var(--color-brand)] hover:underline">(601) 436-7907</a> — available 24/7.
           </p>
         </div>
       </section>

@@ -69,7 +69,7 @@ export default function ServicesPage() {
           <p className="text-white/40 mb-8 max-w-md mx-auto font-light">Call us — we&apos;ll diagnose the issue and recommend the right solution. Free estimates, always.</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/book-online" className="btn-primary">Book Online <ArrowRight size={16} /></Link>
-            <a href="tel:6019135975" className="btn-ghost">Call 601-913-5975</a>
+            <a href="tel:6014367907" className="btn-ghost">Call (601) 436-7907</a>
           </div>
         </div>
       </section>

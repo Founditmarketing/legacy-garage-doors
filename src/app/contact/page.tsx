@@ -4,13 +4,13 @@ import MultiStepForm from "@/components/MultiStepForm";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Legacy Garage Doors — 24/7 emergency service, free estimates. Call 601-913-5975. Hattiesburg, MS.",
+  description: "Contact Legacy Garage Doors — 24/7 emergency service, free estimates. Call (601) 436-7907. Southern Mississippi.",
 };
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "601-913-5975", href: "tel:6019135975" },
-  { icon: Mail, label: "Email", value: "legacygaragedoorsllc@gmail.com", href: "mailto:legacygaragedoorsllc@gmail.com" },
-  { icon: MapPin, label: "Service Area", value: "Hattiesburg, Petal, Purvis, Laurel & surrounding areas", href: undefined },
+  { icon: Phone, label: "Phone", value: "(601) 436-7907", href: "tel:6014367907" },
+  { icon: Mail, label: "Email", value: "seth@legacydoorsales.com", href: "mailto:seth@legacydoorsales.com" },
+  { icon: MapPin, label: "Service Area", value: "Hattiesburg, Gulfport, Biloxi & 40+ cities across Southern MS", href: "/service-areas" },
   { icon: Clock, label: "Hours", value: "24/7 Emergency Service Available", href: undefined },
 ];
 

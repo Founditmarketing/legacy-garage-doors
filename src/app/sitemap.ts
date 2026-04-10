@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
     { url: base, lastModified: new Date(), priority: 1.0 },
     { url: `${base}/services`, lastModified: new Date(), priority: 0.9 },
+    { url: `${base}/service-areas`, lastModified: new Date(), priority: 0.85 },
     { url: `${base}/about`, lastModified: new Date(), priority: 0.7 },
     { url: `${base}/financing`, lastModified: new Date(), priority: 0.7 },
     { url: `${base}/contact`, lastModified: new Date(), priority: 0.8 },

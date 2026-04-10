@@ -136,8 +136,8 @@ export default function HomePage() {
             Call now for same-day service, or book online in 60 seconds.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="tel:6019135975" className="btn-primary text-base">
-              <Phone size={18} /> Call 601-913-5975
+            <a href="tel:6014367907" className="btn-primary text-base">
+              <Phone size={18} /> Call (601) 436-7907
             </a>
             <Link href="/book-online" className="btn-ghost text-base">
               Book Online <ArrowRight size={18} />
