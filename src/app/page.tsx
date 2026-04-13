@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight, Phone,
   DoorOpen, ClipboardCheck, Wrench, Search,
@@ -113,14 +114,46 @@ export default function HomePage() {
       {/* ── BRAND PARTNERS ─────────────────────── */}
       <section className="py-16 border-y border-white/[0.04]">
         <div className="section-wrap text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/30 mb-8">
-            Authorized Dealer & Service Partner
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/30 mb-10">
+            Authorized Dealer &amp; Service Partner
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-12 opacity-40">
-            {["LiftMaster", "Clopay", "Chamberlain", "Amarr"].map((brand) => (
-              <span key={brand} className="text-lg font-bold tracking-tight text-white/60">
-                {brand}
-              </span>
+          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+            {[
+              {
+                name: "LiftMaster",
+                src: "/images/Legacy LOGOs1/Liftmaster-Logo-Vector_edited.png",
+                width: 160,
+                height: 40,
+              },
+              {
+                name: "Clopay",
+                src: "/images/Legacy Logos2/clopay-1-logo.png",
+                width: 140,
+                height: 52,
+              },
+              {
+                name: "Chamberlain",
+                src: "/images/Legacy Logos2/chamberlain-logo-png_seeklogo-28949.png",
+                width: 130,
+                height: 52,
+              },
+              {
+                name: "Amarr",
+                src: "/images/Legacy LOGOs1/amarr.png",
+                width: 120,
+                height: 52,
+              },
+            ].map((brand) => (
+              <div key={brand.name} className="flex items-center justify-center">
+                <Image
+                  src={brand.src}
+                  alt={`${brand.name} logo`}
+                  width={brand.width}
+                  height={brand.height}
+                  className="object-contain opacity-40 hover:opacity-70 transition-opacity duration-300"
+                  style={{ filter: "invert(1) brightness(2)" }}
+                />
+              </div>
             ))}
           </div>
         </div>
