@@ -18,8 +18,8 @@ const serviceData: Record<string, {
     image: "/images/service-new-installations.png",
     imageAlt: "Beautiful brown carriage-style garage door with arched windows on residential home",
     paragraphs: [
-      "Whether you're building a new home or replacing an aging door, Legacy Garage Doors offers a full selection of premium residential and commercial garage doors from top manufacturers including Clopay, Amarr, Chamberlain, and LiftMaster. We work directly with you to match the right style, material, and insulation level to your home's architecture and your budget. Every installation is handled by our own trained technicians — never subcontracted — so you get consistent quality from start to finish.",
-      "Our installation process includes a full structural assessment of your opening, precise measurements, and professional mounting with all hardware tested and adjusted before we leave. We don't cut corners: every spring is properly tensioned, every seal is flush, and every safety sensor is calibrated. The result is a door that operates quietly, looks sharp, and is backed by our lifetime warranty on labor.",
+      "Whether you're building a new home or replacing an aging door, Legacy Garage Doors offers a full selection of premium residential garage doors from top manufacturers including Clopay, Amarr, Chamberlain, and LiftMaster. We work directly with you to match the right style, material, and insulation level to your home's architecture and your budget. Every installation is handled by our own trained technicians — never subcontracted — so you get consistent quality from start to finish.",
+      "Our installation process includes a full structural assessment of your opening, precise measurements, and professional mounting with all hardware tested and adjusted before we leave. We don't cut corners: every spring is properly tensioned, every seal is flush, and every safety sensor is calibrated. The result is a door that operates quietly, looks sharp, and is covered under our labor and parts warranties at no extra cost.",
     ],
     relatedServices: ["preventive-maintenance", "operator-replacements", "weather-seals"],
   },
@@ -40,7 +40,7 @@ const serviceData: Record<string, {
     image: "/images/service-expert-repairs.png",
     imageAlt: "Interior view of garage door mechanical system showing tracks, springs, and operator",
     paragraphs: [
-      "Garage doors break at the worst possible times — that's why Legacy offers same-day repair service with 24/7 emergency availability. Whether it's a snapped cable, a motor that stops responding, a door that's jumped its track, or panels damaged by weather or impact, our technicians have the parts and experience to get you back up and running fast. We service all major brands and models, residential and commercial.",
+      "Garage doors break at the worst possible times — that's why Legacy offers same-day repair service with 24/7 emergency availability. Whether it's a snapped cable, a motor that stops responding, a door that's jumped its track, or panels damaged by weather or impact, our technicians have the parts and experience to get you back up and running fast. We service all major residential brands and models.",
       "Every repair starts with an honest diagnosis. We'll tell you exactly what's wrong, what it costs to fix, and whether repair or replacement makes more financial sense for your situation. There are no hidden fees, no upselling, and no pressure. Our trucks carry the most common replacement parts so the majority of repairs are completed in a single visit.",
     ],
     relatedServices: ["diagnostic-service", "spring-replacements", "rollers-and-cables"],
@@ -52,7 +52,7 @@ const serviceData: Record<string, {
     imageAlt: "Luxury home with dual garage doors and stone column exterior",
     paragraphs: [
       "Not every garage door problem is obvious. Strange noises, intermittent failures, uneven movement, or a door that \"just doesn't feel right\" all point to underlying issues that need professional assessment. Our diagnostic service call is a thorough, systematic inspection where we test every component of your door system — mechanical, electrical, and structural — to identify exactly what's going on.",
-      "You'll receive a clear, written explanation of our findings along with prioritized repair recommendations. We believe in transparency: you'll understand the problem and the options before any work begins. If you choose to proceed with repairs on the spot, the diagnostic fee is applied toward the cost of the work.",
+      "You'll receive a clear, written explanation of our findings along with prioritized repair recommendations. We believe in transparency: you'll understand the problem and the options before any work begins. If you choose to proceed with repairs on the spot, the diagnostic fee is applied toward the cost of the work. Every diagnostic service call also includes a complimentary preventive maintenance service on your door(s) at no extra cost.",
     ],
     relatedServices: ["expert-repairs", "preventive-maintenance", "operator-replacements"],
   },
@@ -63,7 +63,7 @@ const serviceData: Record<string, {
     imageAlt: "Residential home exterior with garage doors",
     paragraphs: [
       "Garage door springs are under extreme tension and are one of the most dangerous components to work with — this is never a DIY job. Legacy technicians are trained and equipped to safely remove and replace both torsion and extension springs. We use high-cycle springs rated for 20,000+ cycles, which means they'll last significantly longer than standard-grade components. Every spring replacement includes a full system rebalancing so your door tracks smoothly and your opener isn't working harder than it needs to.",
-      "Most spring replacements are completed within an hour. We always replace springs in matched pairs — even if only one has broken — because the second spring is almost certainly near the end of its life as well. Replacing both at once saves you from a second service call and ensures even tension across the system. All spring work is covered by our lifetime labor warranty.",
+      "Most spring replacements are completed within an hour. We always replace springs in matched pairs — even if only one has broken — because the second spring is almost certainly near the end of its life as well. Replacing both at once saves you from a second service call and ensures even tension across the system. All spring work is covered under our labor and parts warranties at no extra cost.",
     ],
     relatedServices: ["rollers-and-cables", "expert-repairs", "preventive-maintenance"],
   },
@@ -96,7 +96,7 @@ const serviceData: Record<string, {
     imageAlt: "Close-up of electrical wiring and circuit breakers for garage door operator system",
     paragraphs: [
       "If your garage door opener is more than 10 years old, it's likely louder, slower, and less secure than modern alternatives. Legacy installs smart-enabled operators from LiftMaster and Chamberlain that feature ultra-quiet belt-drive motors, built-in WiFi, battery backup, and integration with home automation systems. You can open, close, and monitor your garage from anywhere using your phone.",
-      "We handle the full replacement process: removing your old unit, installing the new operator, programming remotes and keypads, setting force and travel limits, and testing safety reversal sensors. We'll also walk you through the app setup so you're comfortable using all the smart features before we leave. Every operator installation includes our lifetime labor warranty.",
+      "We handle the full replacement process: removing your old unit, installing the new operator, programming remotes and keypads, setting force and travel limits, and testing safety reversal sensors. We'll also walk you through the app setup so you're comfortable using all the smart features before we leave. Every operator installation is covered under our labor and parts warranties at no extra cost.",
     ],
     relatedServices: ["new-installations", "expert-repairs", "diagnostic-service"],
   },
