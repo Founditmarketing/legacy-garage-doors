@@ -121,25 +121,25 @@ export default function HomePage() {
             {[
               {
                 name: "LiftMaster",
-                src: "/images/Legacy LOGOs1/Liftmaster-Logo-Vector_edited.png",
+                src: "/images/brands/liftmaster.png",
                 width: 160,
                 height: 40,
               },
               {
                 name: "Clopay",
-                src: "/images/Legacy Logos2/clopay-1-logo.png",
+                src: "/images/brands/clopay.png",
                 width: 140,
                 height: 52,
               },
               {
                 name: "Chamberlain",
-                src: "/images/Legacy Logos2/chamberlain-logo-png_seeklogo-28949.png",
+                src: "/images/brands/chamberlain.png",
                 width: 130,
                 height: 52,
               },
               {
                 name: "Amarr",
-                src: "/images/Legacy LOGOs1/amarr.png",
+                src: "/images/brands/amarr.png",
                 width: 120,
                 height: 52,
               },
