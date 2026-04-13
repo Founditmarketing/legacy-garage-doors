@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ExternalLink, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About",
@@ -75,7 +76,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-semibold tracking-tight mb-6">
                 Servicing Garage Doors for <span className="text-gradient-brand">Over a Decade</span>
               </h2>
-              <div className="space-y-5 text-[15px] text-white/50 leading-relaxed font-light">
+              <div className="space-y-5 text-[15px] text-white/50 leading-relaxed font-light mb-8">
                 <p>
                   Legacy Garage Doors was founded on a simple idea: treat every customer&apos;s home like it&apos;s your own. What started as a small family operation out of Hattiesburg, Mississippi, has grown into the region&apos;s most trusted garage door company — serving Pine Belt families and businesses with honest work, fair pricing, and genuine care.
                 </p>
@@ -86,19 +87,36 @@ export default function AboutPage() {
                   We&apos;re proud to be BBB Accredited, SSA Certified, and backed by a 5.0-star Google rating. But the credential we value most? The families who call us back — year after year.
                 </p>
               </div>
-            </div>
-
-            <div>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-2">
                 {values.map((v) => (
-                  <div
-                    key={v.label}
-                    className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] text-center"
-                  >
-                    <div className="text-2xl mb-3">{v.emoji}</div>
-                    <div className="text-sm font-medium text-white/70">{v.label}</div>
+                  <div key={v.label} className="flex items-center gap-2.5">
+                    <CheckCircle size={14} className="text-[var(--color-brand)] flex-shrink-0" />
+                    <span className="text-sm text-white/60 font-medium">{v.label}</span>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/about-new-door.jpg"
+                  alt="New garage door installation by Legacy Garage Doors"
+                  fill
+                  className="object-cover"
+                  quality={85}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </div>
+              <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/about-garage.jpg"
+                  alt="Legacy Garage Doors premium craftsman installation"
+                  fill
+                  className="object-cover"
+                  quality={85}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
             </div>
           </div>

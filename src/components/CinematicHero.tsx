@@ -12,12 +12,12 @@ const SLIDES = [
     sub: "Garage doors that redefine your home — security, silence, and striking design in every panel.",
   },
   {
-    image: "/images/garage-house-1.jpg",
+    image: "/images/about-new-door.jpg",
     words: ["Open", "24/7.", "No", "Exceptions."],
     sub: "Emergency service when you need it. We answer the phone at midnight, weekends, and holidays.",
   },
   {
-    image: "/images/garage-house-2.jpg",
+    image: "/images/about-garage.jpg",
     words: ["Built", "to", "Last.", "Backed", "for", "Life."],
     sub: "Every installation includes our lifetime warranty. Over a decade of trusted craftsmanship.",
   },
