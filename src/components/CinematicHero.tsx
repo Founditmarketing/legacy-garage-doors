@@ -71,7 +71,7 @@ function Typewriter({ text, delay }: { text: string; delay: number }) {
             display: "inline-block",
             width: 2,
             height: "1em",
-            background: "#3E6AE1",
+            background: "#D4A017",
             marginLeft: 2,
             verticalAlign: "middle",
             animation: "cursorBlink 0.8s step-end infinite",
@@ -162,7 +162,7 @@ export default function CinematicHero() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4, delay: 0.5 }}
-              className="text-lg text-white/50 max-w-lg mb-10 leading-relaxed font-light"
+              className="text-lg text-white/75 max-w-lg mb-10 leading-relaxed font-light"
             >
               <Typewriter text={slide.sub} delay={600} />
             </motion.p>
@@ -195,7 +195,7 @@ export default function CinematicHero() {
                 <div className="text-3xl md:text-4xl font-bold text-white">
                   <Counter end={s.end} suffix={s.suffix} delay={1400 + i * 200} />
                 </div>
-                <div className="text-xs text-white/30 mt-1 uppercase tracking-wider font-medium">
+                <div className="text-xs text-white/55 mt-1 uppercase tracking-wider font-medium">
                   {s.label}
                 </div>
               </div>
@@ -212,7 +212,7 @@ export default function CinematicHero() {
             onClick={() => setIdx(i)}
             className={`transition-all duration-300 rounded-full ${
               i === idx
-                ? "w-8 h-2 bg-[#3E6AE1]"
+                ? "w-8 h-2 bg-[#D4A017]"
                 : "w-2 h-2 bg-white/20 hover:bg-white/40"
             }`}
           />

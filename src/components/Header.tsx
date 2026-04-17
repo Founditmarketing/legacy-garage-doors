@@ -57,7 +57,7 @@ export default function Header() {
           borderBottom: clear ? "none" : "1px solid rgba(255,255,255,0.06)",
         }}
       >
-        <div className="section-wrap flex items-center justify-between h-20">
+        <div className="section-wrap flex items-center justify-between h-24">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -65,7 +65,7 @@ export default function Header() {
               alt="Legacy Garage Doors"
               width={240}
               height={240}
-              className="h-36 w-auto object-contain"
+              className="h-44 w-auto object-contain"
               style={{ filter: "brightness(1.15)" }}
               priority
             />
@@ -93,8 +93,8 @@ export default function Header() {
                       href={l.href}
                       className={`flex items-center gap-1 px-5 py-[7px] text-[13px] font-medium rounded-full whitespace-nowrap transition-all duration-200 ${
                         active
-                          ? "text-white bg-[var(--color-brand)]/15"
-                          : "text-white/55 hover:text-white hover:bg-white/[0.06]"
+                          ? "text-white bg-[var(--color-brand)]/20"
+                          : "text-white/70 hover:text-white hover:bg-white/[0.06]"
                       }`}
                     >
                       {l.name}
@@ -154,7 +154,7 @@ export default function Header() {
           <div className="nav-desktop flex items-center gap-3">
             <a
               href="tel:6014367907"
-              className="flex items-center gap-1.5 text-xs font-medium text-white/45 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-xs font-medium text-white/65 hover:text-white transition-colors"
             >
               <Phone size={11} /> (601) 436-7907
             </a>

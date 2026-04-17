@@ -32,11 +32,11 @@ export default function Footer() {
                 alt="Legacy Garage Doors"
                 width={240}
                 height={240}
-                className="h-36 w-auto mb-4"
+                className="h-44 w-auto mb-4"
                 style={{ filter: "brightness(1.15)" }}
               />
             </Link>
-            <p className="text-sm text-white/40 leading-relaxed max-w-[220px] mb-4 font-light">
+            <p className="text-sm text-white/65 leading-relaxed max-w-[220px] mb-4 font-light">
               Family-owned &amp; operated. Serving Hattiesburg &amp; Southern MS for over 10 years.
             </p>
             <a
@@ -59,7 +59,7 @@ export default function Footer() {
                 <li key={s.name}>
                   <Link
                     href={s.href}
-                    className="text-sm text-white/40 hover:text-white transition-colors font-light"
+                    className="text-sm text-white/65 hover:text-white transition-colors font-light"
                   >
                     {s.name}
                   </Link>
@@ -78,7 +78,7 @@ export default function Footer() {
                 <li key={c.name}>
                   <Link
                     href={c.href}
-                    className="text-sm text-white/40 hover:text-white transition-colors font-light"
+                    className="text-sm text-white/65 hover:text-white transition-colors font-light"
                   >
                     {c.name}
                   </Link>
@@ -93,21 +93,21 @@ export default function Footer() {
               Contact
             </h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-sm text-white/40 font-light">
+              <li className="flex items-start gap-3 text-sm text-white/65 font-light">
                 <Phone size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-brand)]" />
                 <a href="tel:6014367907" className="hover:text-white transition-colors">
                   (601) 436-7907
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-sm text-white/40 font-light">
+              <li className="flex items-start gap-3 text-sm text-white/65 font-light">
                 <Mail size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-brand)]" />
                 <a href="mailto:seth@legacydoorsales.com" className="hover:text-white transition-colors">seth@legacydoorsales.com</a>
               </li>
-              <li className="flex items-start gap-3 text-sm text-white/40 font-light">
+              <li className="flex items-start gap-3 text-sm text-white/65 font-light">
                 <MapPin size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-brand)]" />
                 <span>Hattiesburg, MS &amp; surrounding areas</span>
               </li>
-              <li className="flex items-start gap-3 text-sm text-white/40 font-light">
+              <li className="flex items-start gap-3 text-sm text-white/65 font-light">
                 <Clock size={15} className="mt-0.5 flex-shrink-0 text-[var(--color-brand)]" />
                 <span>24/7 Emergency Service</span>
               </li>

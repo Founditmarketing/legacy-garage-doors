@@ -33,7 +33,7 @@ export default function HomePage() {
       {/* ── SERVICES GRID ──────────────────────── */}
       <section className="py-20">
         <div className="section-wrap">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#3E6AE1] mb-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#D4A017] mb-3">
             What We Do
           </p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-12">
@@ -47,13 +47,13 @@ export default function HomePage() {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="group block p-6 bg-white/[0.02] border border-white/[0.05] rounded-2xl transition-all duration-300 hover:bg-white/[0.05] hover:border-[#3E6AE1]/20 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(62,106,225,0.08)]"
+                  className="group block p-6 bg-white/[0.02] border border-white/[0.05] rounded-2xl transition-all duration-300 hover:bg-white/[0.05] hover:border-[#D4A017]/20 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(212,160,23,0.08)]"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#3E6AE1]/10 border border-[#3E6AE1]/15 flex items-center justify-center mb-4 text-[#3E6AE1] group-hover:bg-[#3E6AE1]/15 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-[#D4A017]/10 border border-[#D4A017]/15 flex items-center justify-center mb-4 text-[#D4A017] group-hover:bg-[#D4A017]/15 transition-colors">
                     <Icon size={22} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-[15px] font-semibold mb-2">{s.title}</h3>
-                  <p className="text-xs text-white/40 leading-relaxed font-light">{s.desc}</p>
+                  <p className="text-xs text-white/65 leading-relaxed font-light">{s.desc}</p>
                 </Link>
               );
             })}
@@ -78,28 +78,28 @@ export default function HomePage() {
         <div className="section-wrap">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#3E6AE1] mb-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#D4A017] mb-3">
                 Get Started
               </p>
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
                 Tell us what you need.
               </h2>
-              <p className="text-white/40 text-[15px] leading-relaxed font-light mb-8">
+              <p className="text-white/65 text-[15px] leading-relaxed font-light mb-8">
                 Answer a few quick questions and we&apos;ll get back to you within 30 minutes with a plan and estimate. No pressure, no hidden fees.
               </p>
 
               <div className="space-y-4 text-sm text-white/30">
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#3E6AE1]/10 flex items-center justify-center text-[#3E6AE1] text-xs">✓</div>
-                  Free estimates — always
+                  <div className="w-6 h-6 rounded-full bg-[#D4A017]/10 flex items-center justify-center text-[#D4A017] text-xs">✓</div>
+                  <span className="text-white/65 text-sm">Free estimates — always</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#3E6AE1]/10 flex items-center justify-center text-[#3E6AE1] text-xs">✓</div>
-                  Response within 30 minutes
+                  <div className="w-6 h-6 rounded-full bg-[#D4A017]/10 flex items-center justify-center text-[#D4A017] text-xs">✓</div>
+                  <span className="text-white/65 text-sm">Response within 30 minutes</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#3E6AE1]/10 flex items-center justify-center text-[#3E6AE1] text-xs">✓</div>
-                  No hidden fees or upselling
+                  <div className="w-6 h-6 rounded-full bg-[#D4A017]/10 flex items-center justify-center text-[#D4A017] text-xs">✓</div>
+                  <span className="text-white/65 text-sm">No hidden fees or upselling</span>
                 </div>
               </div>
             </div>
@@ -165,7 +165,7 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
             Your garage door won&apos;t fix itself.
           </h2>
-          <p className="text-white/40 text-lg mb-8 max-w-lg mx-auto font-light">
+          <p className="text-white/65 text-lg mb-8 max-w-lg mx-auto font-light">
             Call now for same-day service, or book online in 60 seconds.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">

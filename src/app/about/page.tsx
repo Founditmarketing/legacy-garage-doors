@@ -61,7 +61,7 @@ export default function AboutPage() {
         <div className="section-wrap">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-brand)] mb-4">About Legacy</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Craftsmanship Meets Integrity.</h1>
-          <p className="text-white/40 text-lg max-w-xl mx-auto font-light">
+          <p className="text-white/65 text-lg max-w-xl mx-auto font-light">
             Family-owned and operated, serving Southern Mississippi with honesty and precision for over a decade.
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-semibold tracking-tight mb-6">
                 Servicing Garage Doors for <span className="text-gradient-brand">Over a Decade</span>
               </h2>
-              <div className="space-y-5 text-[15px] text-white/50 leading-relaxed font-light mb-8">
+              <div className="space-y-5 text-[15px] text-white/75 leading-relaxed font-light mb-8">
                 <p>
                   Legacy Garage Doors was founded on a simple idea: treat every customer&apos;s home like it&apos;s your own. What started as a small family operation out of Hattiesburg, Mississippi, has grown into the region&apos;s most trusted garage door company — serving Pine Belt families and businesses with honest work, fair pricing, and genuine care.
                 </p>
@@ -91,7 +91,7 @@ export default function AboutPage() {
                 {values.map((v) => (
                   <div key={v.label} className="flex items-center gap-2.5">
                     <CheckCircle size={14} className="text-[var(--color-brand)] flex-shrink-0" />
-                    <span className="text-sm text-white/60 font-medium">{v.label}</span>
+                    <span className="text-sm text-white/75 font-medium">{v.label}</span>
                   </div>
                 ))}
               </div>
@@ -134,7 +134,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
               Trusted by <span className="text-gradient-brand">Industry Leaders</span>
             </h2>
-            <p className="text-white/40 text-[15px] max-w-xl mx-auto font-light">
+            <p className="text-white/65 text-[15px] max-w-xl mx-auto font-light">
               Our work speaks for itself — but these organizations have recognized it too.
             </p>
           </div>
@@ -220,7 +220,7 @@ export default function AboutPage() {
       <section className="py-16">
         <div className="section-wrap text-center">
           <h2 className="text-3xl font-bold tracking-tight mb-4">Ready to work with the best?</h2>
-          <p className="text-white/40 mb-8 max-w-md mx-auto font-light">See why Southern Mississippi trusts Legacy for every garage door job.</p>
+          <p className="text-white/65 mb-8 max-w-md mx-auto font-light">See why Southern Mississippi trusts Legacy for every garage door job.</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/book-online" className="btn-primary">Book Online <ArrowRight size={16} /></Link>
             <Link href="/services" className="btn-ghost">Our Services</Link>

@@ -5,8 +5,9 @@
   --color-charcoal: #0c0d14;
   --color-surface: #16171f;
   --color-surface-light: #1c1d26;
-  --color-brand: #3E6AE1;
-  --color-brand-hover: #5A82F0;
+  --color-brand: #D4A017;
+  --color-brand-hover: #E8B422;
+  --color-teal: #0EA8A0;
 }
 
 /* ── Base ──────────────────────────────────────── */
@@ -59,7 +60,7 @@ body {
 
 /* ── Gradient text ────────────────────────────── */
 .text-gradient-brand {
-  background: linear-gradient(135deg, #3E6AE1, #5A82F0);
+  background: linear-gradient(135deg, #D4A017, #0EA8A0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -81,8 +82,8 @@ body {
   color: #6B6B70;
 }
 .input-industrial:focus {
-  border-color: #3E6AE1;
-  box-shadow: 0 0 0 3px rgba(62, 106, 225, 0.25);
+  border-color: #D4A017;
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.25);
   outline: none;
 }
 
@@ -93,21 +94,21 @@ body {
   justify-content: center;
   gap: 8px;
   padding: 14px 28px;
-  background-color: #3E6AE1;
-  color: #fff;
-  font-weight: 600;
+  background-color: #D4A017;
+  color: #0c0d14;
+  font-weight: 700;
   font-size: 15px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: 0 4px 20px rgba(62, 106, 225, 0.25);
+  box-shadow: 0 4px 20px rgba(212, 160, 23, 0.30);
   text-decoration: none;
 }
 .btn-primary:hover {
-  background-color: #5A82F0;
+  background-color: #E8B422;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(62, 106, 225, 0.35);
+  box-shadow: 0 8px 30px rgba(212, 160, 23, 0.45);
 }
 
 .btn-ghost {
@@ -166,9 +167,9 @@ body {
 }
 
 /* ── Animations ───────────────────────────────── */
-@keyframes pulse-blue {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(62, 106, 225, 0.4); }
-  50% { box-shadow: 0 0 0 8px rgba(62, 106, 225, 0); }
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 160, 23, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(212, 160, 23, 0); }
 }
 
 @keyframes fadeInUp {
