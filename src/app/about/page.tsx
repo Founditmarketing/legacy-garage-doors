@@ -81,7 +81,7 @@ export default function AboutPage() {
                   Legacy Garage Doors was founded on a simple idea: treat every customer&apos;s home like it&apos;s your own. What started as a small family operation out of Hattiesburg, Mississippi, has grown into the region&apos;s most trusted garage door company — serving Pine Belt families and businesses with honest work, fair pricing, and genuine care.
                 </p>
                 <p>
-                  Owners Seth and Jessica Neumann and their team bring over a decade of hands-on experience to every job. Whether it&apos;s a late-night emergency or a full custom installation, they show up, do it right, and stand behind their work with a lifetime warranty. No shortcuts, no runarounds, no excuses.
+                  Owners Seth and Jessica Neumann and their team bring over a decade of hands-on experience to every job. Whether it&apos;s a late-night emergency or a full custom installation, they show up, do it right, and stand behind their work. No shortcuts, no runarounds, no excuses.
                 </p>
                 <p>
                   We&apos;re proud to be BBB Accredited, SSA Certified, and backed by a 5.0-star Google rating. But the credential we value most? The families who call us back — year after year.
