@@ -6,7 +6,7 @@ const badges = [
   { icon: Clock, label: "24/7 Emergency Service" },
   { icon: BadgeCheck, label: "Licensed & Insured" },
   { icon: Award, label: "SSA Certified" },
-  { icon: Shield, label: "Lifetime Warranty" },
+  { icon: Shield, label: "10+ Years Experience" },
   { icon: Star, label: "Family Owned Since 2014" },
 ];
 

@@ -15,7 +15,7 @@ const allServices = [
   { title: "Preventative Maintenance", slug: "preventive-maintenance", desc: "Keep your system running smoothly and avoid costly emergency repairs with routine care and inspection.", Icon: ClipboardCheck },
   { title: "Repairs on Doors & Operators", slug: "expert-repairs", desc: "Broken panels, malfunctioning motors, misaligned tracks — we repair all makes and models, same day.", Icon: Wrench },
   { title: "Diagnostic Service Calls", slug: "diagnostic-service", desc: "Expert troubleshooting that identifies the root cause before a single wrench turns.", Icon: Search },
-  { title: "Spring Replacements", slug: "spring-replacements", desc: "Safe, professional replacement of high-tension springs with lifetime warranty.", Icon: Zap },
+  { title: "Spring Replacements", slug: "spring-replacements", desc: "Safe, professional replacement of high-tension springs by trained technicians.", Icon: Zap },
   { title: "Rollers & Cables", slug: "rollers-and-cables", desc: "Smooth out noisy operation and ensure safety with fresh nylon rollers and heavy-duty cables.", Icon: CircleDot },
   { title: "Weather Seals", slug: "weather-seals", desc: "Protect your garage from pests, dust, and drafts with professional weather stripping.", Icon: CloudRain },
   { title: "Operator Replacements", slug: "operator-replacements", desc: "Modern, quiet, smart-connected openers from LiftMaster and Chamberlain.", Icon: Settings },

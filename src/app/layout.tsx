@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Legacy Garage Doors",
   },
   description:
-    "Family-owned garage door experts serving Southern Mississippi. 24/7 emergency service, lifetime warranty, 5.0★ Google rated. Call (601) 436-7907.",
+    "Family-owned garage door experts serving Southern Mississippi. 24/7 emergency service, 5.0★ Google rated. Call (601) 436-7907.",
   keywords: [
     "garage door repair",
     "garage door installation",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Legacy Garage Doors | 24/7 Service — Hattiesburg, MS",
     description:
-      "Family-owned garage door experts. 24/7 emergency service, lifetime warranty, 5.0★ Google rated.",
+      "Family-owned garage door experts. 24/7 emergency service, 5.0★ Google rated.",
     type: "website",
     locale: "en_US",
     siteName: "Legacy Garage Doors",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Legacy Garage Doors | 24/7 Service — Hattiesburg, MS",
     description:
-      "Family-owned garage door experts. 24/7 emergency service, lifetime warranty, 5.0★ Google rated.",
+      "Family-owned garage door experts. 24/7 emergency service, 5.0★ Google rated.",
     images: ["https://legacy-garage-doors.vercel.app/images/og-image.png"],
   },
 };
@@ -66,7 +66,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: "Legacy Garage Doors",
-              description: "Family-owned garage door experts serving Southern Mississippi. 24/7 emergency service, lifetime warranty.",
+              description: "Family-owned garage door experts serving Southern Mississippi. 24/7 emergency service.",
               telephone: "(601) 436-7907",
               email: "seth@legacydoorsales.com",
               url: "https://legacy-garage-doors.vercel.app",

@@ -58,7 +58,7 @@ const serviceData: Record<string, {
   },
   "spring-replacements": {
     title: "Spring Replacements",
-    desc: "Garage door spring replacement in Hattiesburg, MS. High-cycle springs, lifetime warranty.",
+    desc: "Garage door spring replacement in Hattiesburg, MS. High-cycle springs rated 20,000+ cycles.",
     image: "/images/service-spring-replacements.png",
     imageAlt: "Residential home exterior with garage doors",
     paragraphs: [

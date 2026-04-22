@@ -15,7 +15,7 @@ const services = [
   { title: "Preventive Maintenance", icon: ClipboardCheck, slug: "preventive-maintenance", desc: "Routine care to avoid costly breakdowns and extend door life." },
   { title: "Expert Repairs", icon: Wrench, slug: "expert-repairs", desc: "Same-day service. Any issue, any brand — resolved fast." },
   { title: "Diagnostic Service", icon: Search, slug: "diagnostic-service", desc: "Precision fault detection & detailed reporting." },
-  { title: "Spring Replacements", icon: Zap, slug: "spring-replacements", desc: "High-cycle springs with lifetime warranty." },
+  { title: "Spring Replacements", icon: Zap, slug: "spring-replacements", desc: "High-cycle springs rated for 20,000+ cycles — installed safely by trained technicians." },
   { title: "Rollers & Cables", icon: CircleDot, slug: "rollers-and-cables", desc: "Silent nylon rollers for buttery-smooth operation." },
   { title: "Weather Seals", icon: CloudRain, slug: "weather-seals", desc: "Total protection from rain, pests, and drafts." },
   { title: "Operator Replacements", icon: Settings, slug: "operator-replacements", desc: "Smart operators for the modern home." },

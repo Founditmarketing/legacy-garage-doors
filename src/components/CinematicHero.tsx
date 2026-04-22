@@ -18,8 +18,8 @@ const SLIDES = [
   },
   {
     image: "/images/about-garage.jpg",
-    words: ["Built", "to", "Last.", "Backed", "for", "Life."],
-    sub: "Every installation includes our lifetime warranty. Over a decade of trusted craftsmanship.",
+    words: ["Built", "to", "Last.", "Trusted", "for", "Life."],
+    sub: "Over a decade of trusted craftsmanship across Southern Mississippi. We stand behind every job.",
   },
 ];
 
