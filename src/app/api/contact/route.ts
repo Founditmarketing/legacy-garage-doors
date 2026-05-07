@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: "Legacy Garage Doors <hello@legacydoorsales.com>",
       to: ["seth@legacydoorsales.com"],
-      reply_to: email || undefined,
+      replyTo: email || undefined,
       subject: `New Service Request — ${issueLabels[issueType] ?? issueType} (${zipCode})`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0a0a0a; color: #f5f5f5; border-radius: 8px; overflow: hidden;">
