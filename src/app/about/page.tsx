@@ -198,7 +198,7 @@ export default function AboutPage() {
                 { name: "Yelp", href: "https://www.yelp.com/biz/legacy-garage-doors-purvis" },
                 { name: "Nextdoor", href: "https://nextdoor.com/pages/legacy-garage-doors-purvis-ms/" },
                 { name: "Porch", href: "https://pro.porch.com/purvis-ms/garage-door-specialists/legacy-garage-doors-167520379/pp" },
-                { name: "Facebook", href: "https://www.facebook.com/p/Legacy-Garage-Doors-61578633631605/" },
+                { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61578633631605" },
                 { name: "Instagram", href: "https://www.instagram.com/legacydoorsales/" },
               ].map((p) => (
                 <a

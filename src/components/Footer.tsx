@@ -40,7 +40,7 @@ export default function Footer() {
               Family-owned &amp; operated. Serving Hattiesburg &amp; Southern MS for over 10 years.
             </p>
             <a
-              href="https://www.facebook.com/legacygaragedoorsllc"
+              href="https://www.facebook.com/profile.php?id=61578633631605"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-white/30 hover:text-[var(--color-brand)] transition-colors"

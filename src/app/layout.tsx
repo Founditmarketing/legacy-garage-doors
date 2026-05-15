@@ -82,7 +82,7 @@ export default function RootLayout({
               openingHoursSpecification: { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], opens: "00:00", closes: "23:59" },
               aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "13", bestRating: "5" },
               priceRange: "$$",
-              sameAs: ["https://www.facebook.com/legacygaragedoorsllc"],
+              sameAs: ["https://www.facebook.com/profile.php?id=61578633631605"],
             }),
           }}
         />
