@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://legacy-garage-doors.vercel.app/sitemap.xml
+Sitemap: https://legacydoorsales.com/sitemap.xml

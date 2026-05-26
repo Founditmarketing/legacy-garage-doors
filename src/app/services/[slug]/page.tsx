@@ -141,7 +141,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       },
     },
     areaServed: "Hattiesburg, MS and surrounding areas",
-    image: `https://legacy-garage-doors.vercel.app${service.image}`,
+    image: `https://legacydoorsales.com${service.image}`,
   };
 
   return (

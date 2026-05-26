@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "Legacy Garage Doors",
     images: [
       {
-        url: "https://legacy-garage-doors.vercel.app/images/og-image.png",
+        url: "https://legacydoorsales.com/images/og-image.png",
         width: 1024,
         height: 1024,
         alt: "Legacy Garage Doors — Service You Can Trust",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Legacy Garage Doors | 24/7 Service — Hattiesburg, MS",
     description:
       "Family-owned garage door experts. 24/7 emergency service, 5.0★ Google rated.",
-    images: ["https://legacy-garage-doors.vercel.app/images/og-image.png"],
+    images: ["https://legacydoorsales.com/images/og-image.png"],
   },
 };
 
@@ -69,8 +69,8 @@ export default function RootLayout({
               description: "Family-owned garage door experts serving Southern Mississippi. 24/7 emergency service.",
               telephone: "(601) 436-7907",
               email: "seth@legacydoorsales.com",
-              url: "https://legacy-garage-doors.vercel.app",
-              image: "https://legacy-garage-doors.vercel.app/images/logo-shield.png",
+              url: "https://legacydoorsales.com",
+              image: "https://legacydoorsales.com/images/logo-shield.png",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Hattiesburg",
