@@ -1,0 +1,68 @@
+# Legacy Garage Doors
+
+Legacy Garage Doors is a premier family-owned and operated garage door service provider serving Southern Mississippi (including the Pine Belt, Gulf Coast, Southwest, Southeast, and Central Mississippi regions) with professional residential installation, maintenance, and 24/7 emergency repair services.
+
+## Contact Information
+- **Phone:** (601) 436-7907
+- **Website:** https://legacy-garage-doors.vercel.app
+- **Owners:** Seth and Jessica Neumann
+- **Certifications:** BBB Accredited, SSA Certified, licensed & insured.
+
+## Core Services
+
+### 1. New Installations
+- Premium garage door sales and professional installation.
+- Brands carried: Clopay, Amarr, Chamberlain, LiftMaster.
+- URL: `/services/new-installations`
+
+### 2. Preventive Maintenance
+- Comprehensive annual/biannual inspections.
+- Moving parts lubrication, balance checks, and track adjustments.
+- URL: `/services/preventive-maintenance`
+
+### 3. Expert Repairs
+- Same-day repairs and 24/7 emergency calls.
+- Handles broken cables, motors, bent tracks, damaged panels, and general troubleshooting.
+- URL: `/services/expert-repairs`
+
+### 4. Diagnostic Service
+- Structural, mechanical, and electrical diagnostic inspections.
+- Detailed report with prioritized recommendations (applied toward repair cost).
+- URL: `/services/diagnostic-service`
+
+### 5. Spring Replacements
+- Safe, professional torsion and extension spring replacement.
+- High-cycle springs rated for 20,000+ operations.
+- URL: `/services/spring-replacements`
+
+### 6. Rollers & Cables
+- Quiet precision-bearing nylon roller replacement.
+- Aircraft-grade galvanized steel cable installation.
+- URL: `/services/rollers-and-cables`
+
+### 7. Weather Seals
+- Commercial-grade EPDM rubber weatherstripping.
+- Covers bottom, side, and header seals.
+- URL: `/services/weather-seals`
+
+### 8. Operator Replacements
+- Smart opener systems (LiftMaster, Chamberlain) with WiFi, app control, and battery backups.
+- URL: `/services/operator-replacements`
+
+## Service Areas
+Legacy Garage Doors serves over 44 cities in Southern Mississippi, grouped into five primary regions:
+
+- **Pine Belt (Hattiesburg area):** Hattiesburg, Laurel, Petal, Collins, Ellisville, Sumrall, Richton, Wiggins.
+- **Gulf Coast:** Biloxi, Gulfport, Ocean Springs, Bay St. Louis, Pass Christian, Long Beach, Pascagoula, Moss Point, Gautier, Diamondhead, D'Iberville, Waveland, Gulf Hills, Gulf Park Estates.
+- **Southwest Mississippi:** Brookhaven, McComb, Natchez, Columbia, Hazlehurst, Crystal Springs, Fayette, Liberty, Tylertown, Woodville.
+- **Central Mississippi:** Brandon, Byram, Flowood, Pearl, Florence.
+- **Southeast Mississippi:** Picayune, Poplarville, Lucedale, St. Martin, Vancleave, Leaksville, Waynesboro.
+
+## Key Sitemap URLs
+- **Home:** `/`
+- **About Us:** `/about`
+- **All Services:** `/services`
+- **Service Areas:** `/service-areas`
+- **Financing Options:** `/financing`
+- **Contact Us:** `/contact`
+- **Book Online:** `/book-online`
