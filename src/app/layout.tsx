@@ -97,6 +97,10 @@ export default function RootLayout({
       {/* Google Analytics */}
       <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SB82178Z3S')` }} />
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-SB82178Z3S" strategy="afterInteractive" />
+      
+      {/* Google Analytics */}
+      <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-J552G1S4HJ')` }} />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-J552G1S4HJ" strategy="afterInteractive" />
       </body>
     </html>
   );
