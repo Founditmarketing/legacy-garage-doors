@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomDock from "@/components/MobileBottomDock";
 import Script from 'next/script'
+import PromoBanner from "@/components/PromoBanner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -89,6 +90,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <PromoBanner />
         <Header />
         <main>{children}</main>
         <Footer />

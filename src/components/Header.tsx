@@ -50,8 +50,9 @@ export default function Header() {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+        className="fixed left-0 right-0 z-50 transition-all duration-500"
         style={{
+          top: "var(--promo-banner-h, 0px)",
           background: clear ? "transparent" : "rgba(28,28,30,0.92)",
           backdropFilter: clear ? "none" : "blur(20px) saturate(180%)",
           borderBottom: clear ? "none" : "1px solid rgba(255,255,255,0.06)",
