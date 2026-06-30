@@ -103,6 +103,8 @@ export default function RootLayout({
       {/* Google Analytics */}
       <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-J552G1S4HJ')` }} />
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-J552G1S4HJ" strategy="afterInteractive" />
+            {/* Found It Lead Capture */}
+      <Script src="https://www.founditos.com/embed/lead-capture.js" data-account="67a2be9f-7571-4de9-859c-3d2abc197a40" strategy="afterInteractive" />
       </body>
     </html>
   );
