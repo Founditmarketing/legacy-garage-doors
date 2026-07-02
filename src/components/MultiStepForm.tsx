@@ -39,10 +39,15 @@ export default function MultiStepForm() {
     setLoading(true);
     setSubmitError("");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://www.founditos.com/api/contact-form/67a2be9f-7571-4de9-859c-3d2abc197a40", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: `Issue: ${formData.issueType}\nZIP: ${formData.zipCode}\n\n${formData.description}`,
+        }),
       });
       if (!res.ok) {
         const data = await res.json();
