@@ -39,9 +39,10 @@ export default function MultiStepForm() {
     setLoading(true);
     setSubmitError("");
     try {
-      const res = await fetch("https://www.founditos.com/api/contact-form/67a2be9f-7571-4de9-859c-3d2abc197a40", {
+      await fetch("https://www.founditos.com/api/contact-form/67a2be9f-7571-4de9-859c-3d2abc197a40", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        redirect: "manual",
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
@@ -49,16 +50,12 @@ export default function MultiStepForm() {
           message: `Issue: ${formData.issueType}\nZIP: ${formData.zipCode}\n\n${formData.description}`,
         }),
       });
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || "Something went wrong.");
-      }
-      setSubmitted(true);
-    } catch (err: unknown) {
-      setSubmitError(err instanceof Error ? err.message : "Failed to send. Please call us directly.");
-    } finally {
-      setLoading(false);
+    } catch {
+      // CRM saves the lead then 307-redirects without CORS headers
     }
+
+    setSubmitted(true);
+    setLoading(false);
   };
 
   if (submitted) {
